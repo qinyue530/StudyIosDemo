@@ -14,6 +14,7 @@
 		602F3BFA2D5C93300040C01D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BF92D5C93300040C01D /* Assets.xcassets */; };
 		602F3BFD2D5C93300040C01D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BFC2D5C93300040C01D /* Base */; };
 		602F3C002D5C93300040C01D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 602F3BFF2D5C93300040C01D /* main.m */; };
+		6090E8D82D5DC73E00348316 /* NsPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090E8D72D5DC73E00348316 /* NsPerson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		602F3BFC2D5C93300040C01D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		602F3BFE2D5C93300040C01D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		602F3BFF2D5C93300040C01D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6090E8D62D5DC71D00348316 /* NsPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NsPerson.h; sourceTree = "<group>"; };
+		6090E8D72D5DC73E00348316 /* NsPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NsPerson.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				602F3BFB2D5C93300040C01D /* LaunchScreen.storyboard */,
 				602F3BFE2D5C93300040C01D /* Info.plist */,
 				602F3BFF2D5C93300040C01D /* main.m */,
+				6090E8D62D5DC71D00348316 /* NsPerson.h */,
+				6090E8D72D5DC73E00348316 /* NsPerson.m */,
 			);
 			path = StudyIosDemo;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				602F3BF52D5C932F0040C01D /* ViewController.m in Sources */,
+				6090E8D82D5DC73E00348316 /* NsPerson.m in Sources */,
 				602F3BEF2D5C932F0040C01D /* AppDelegate.m in Sources */,
 				602F3C002D5C93300040C01D /* main.m in Sources */,
 				602F3BF22D5C932F0040C01D /* SceneDelegate.m in Sources */,

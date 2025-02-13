@@ -7,59 +7,43 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "NsPerson.h"
+/**
+ .h     头文件     写类声明
+ ,m    实现文件    写类的实现
+ */
+/**
+分组导航标记
 
-//新建类
-@interface NsPerson : NSObject{
-    @public
-    NSString *_name;
-    int _age;
-    float _height;
-}
-
-//无参数方法
-- (void)run ;
-- (int)runInt ;
-//有参数方法
-- (void)eat:(NSString *)food
-           :(int)sum;
-- (int)sumWith:(int) addA
-              :(int) addB;
-@end
-//方法
-@implementation NsPerson
-//无参数方法实现
-- (void)run {
-    //方法中使用对象属性
-    NSLog(@"======= run  ======= %@======%d=======%f",_name,_age,_height);
-}
-- (int)runInt {
-    NSLog(@"======= runInt  =======");
-    return 111;
-}
-//有参数方法
-- (void)eat:(NSString *)food
-           :(int)sum{
-    NSLog(@"%@ ======= %d",food , sum);
+会在导航条对应的位置展示一个标题
+#pragma mark 描述信息
+会出现一条水平分隔线
+#pragma mark -
+ 
+ */
+#pragma mark - 方法
+void test(void){
+    NSLog(@"test==============");
+    NSLog(@"test==============");
+    NSLog(@"test==============");
 }
 
-- (NSString *)eatNSString:(NSString *)food
-           :(int)sum{
-    NSLog(@"%@ ======= %d",food , sum);
-    return @"eatNSString";
-}
-
--(int)sumWith:(int)addA 
-             :(int)addB{
-    NSLog(@"%d + %d = %d",addA , addB,addA + addB);
-    return addA+addB;
-}
-@end
-
+#pragma mark - main方法
 int main(int argc, char * argv[]) {
     NSString * appDelegateClassName;
     @autoreleasepool {
         // Setup code that might create autoreleased objects goes here.
         NSLog(@"Hello World!");
+        //C指针用NULL int *i = NULL; 不指向内存中的空间
+        /*OC的类指针使用nil  
+        NsPerson *p = nil;   不指向任何对象
+        那么这个时候 如果通过p1指针去访问p1指针指向的对象的属性
+        这个时候会运行报错，那么这个时候，如果通过p1指针去调用对象的方法 运行不会报错 但是方法不会执行，没有任何反应
+         */
+        if(NULL == nil){
+            NSLog(@"%@ ========= %@" , NULL,nil);
+        }
+        
         NsPerson *nsPerson = [NsPerson new];
         nsPerson->_name = @"qinyue";
         nsPerson->_height = 12.2f;
@@ -82,7 +66,18 @@ int main(int argc, char * argv[]) {
         NSString *eatResult = [nsPerson eatNSString:nsPerson->_name :nsPerson->_height];
         NSLog(@"%@" , eatResult);
         [nsPerson sumWith:5 :7];
+        NSLog(@"\n");
+        NSLog(@"\n");
+        NSLog(@"\n");
         
+        NsPerson *personA = [NsPerson new];
+        personA->_name=@"AAA";
+        NsPerson *personB = personA;
+        personB->_name = @"BBB";
+        NsPerson *personC = personB;
+        personC->_name = @"CCC";
+        NSLog(@"%@=======%@=========%@" , personA->_name , personB->_name , personC->_name);
+        test();
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
         
     }
