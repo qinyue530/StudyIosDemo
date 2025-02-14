@@ -103,7 +103,7 @@ int main(int argc, char * argv[]) {
             Student* exceptionStudent = [Student new];
             [exceptionStudent studentException];
         } @catch (NSException *exception) {
-            NSLog(@"exception");
+            NSLog(@"-------------%@",exception);
         } @finally {
             NSLog(@"@finally");
         }
