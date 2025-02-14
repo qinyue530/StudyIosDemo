@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "NsPerson.h"
+#import "Student.h"
 /**
  .h     头文件     写类声明
  ,m    实现文件    写类的实现
@@ -78,7 +79,16 @@ int main(int argc, char * argv[]) {
         personC->_name = @"CCC";
         NSLog(@"%@=======%@=========%@" , personA->_name , personB->_name , personC->_name);
         test();
+        
+        Student *student = [Student new];
+        //对象作为参数的方法 是地址传递，方法中的赋值会影响传入对象的值
+        [student getPersonName:nsPerson];
+        NSLog(@"以对象作为参数的方法====%@",nsPerson->_name);
+        
+        NsPerson *nsPersonQ = [student getPerson:@"qinyue" :11 :111.12f];
+        NSLog(@"以对象作为返回值的方法=====%@=======%d=======%f",nsPersonQ->_name,nsPersonQ->_age,nsPersonQ->_height);
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
+    
         
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
