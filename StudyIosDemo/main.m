@@ -87,6 +87,12 @@ int main(int argc, char * argv[]) {
         
         NsPerson *nsPersonQ = [student getPerson:@"qinyue" :11 :111.12f];
         NSLog(@"以对象作为返回值的方法=====%@=======%d=======%f",nsPersonQ->_name,nsPersonQ->_age,nsPersonQ->_height);
+        
+        Student* std = [Student new];
+        std = [std makeStudent:nsPersonQ :@"qqq" :222 :333.33f ];
+        NSLog(@"以对象作为属性==NsPerson===%@====%d====%f=====Student=====%@=====%d=====%f",
+              std->_sNsPerson->_name, std->_sNsPerson->_age,std->_sNsPerson->_height
+              ,std->_name,std->_age,std->_height);
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
     
         

@@ -18,6 +18,7 @@
     NSString *_name;
     int _age;
     float _height;
+    NsPerson *_sNsPerson;
 }
 
 #pragma mark - Student方法声明
@@ -37,5 +38,10 @@
 - (NsPerson *)getPerson:(NSString *)_name
                        :(int)_age
                        :(float)_height;
+
+- (Student *)makeStudent:(NsPerson *)_nsPerson
+                  :(NSString *)_name
+                  :(int)_age
+                  :(float)_height;
 @end
 

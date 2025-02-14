@@ -52,4 +52,16 @@
     nsPerson->_height = _height;
     return nsPerson;
 }
+
+- (Student *)makeStudent:(NsPerson *)_nsPerson
+                  :(NSString *)_name
+                  :(int)_age
+                  :(float)_height{
+    Student* myStudent = [Student new];
+    myStudent->_age=_age;
+    myStudent->_name=_name;
+    myStudent->_height=_height;
+    myStudent->_sNsPerson = _nsPerson;
+    return myStudent;
+}
 @end
