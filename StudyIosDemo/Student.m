@@ -64,4 +64,8 @@
     myStudent->_sNsPerson = _nsPerson;
     return myStudent;
 }
+
+- (BOOL)compareAge:(Student *)_student{
+    return _age>_student->_age;
+}
 @end

@@ -43,5 +43,7 @@
                   :(NSString *)_name
                   :(int)_age
                   :(float)_height;
+
+- (BOOL)compareAge:(Student *)_student;
 @end
 
