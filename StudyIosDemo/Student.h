@@ -45,5 +45,7 @@
                   :(float)_height;
 
 - (BOOL)compareAge:(Student *)_student;
+
+-(void)studentException;
 @end
 

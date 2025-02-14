@@ -98,6 +98,15 @@ int main(int argc, char * argv[]) {
         BOOL compareResult = [std compareAge:_student];
         NSLog(@"年龄比较结果===%d",compareResult);
         
+        @try {
+            NSLog(@"try");
+            Student* exceptionStudent = [Student new];
+            [exceptionStudent studentException];
+        } @catch (NSException *exception) {
+            NSLog(@"exception");
+        } @finally {
+            NSLog(@"@finally");
+        }
     
         
     }
