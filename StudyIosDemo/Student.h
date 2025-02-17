@@ -47,5 +47,11 @@
 - (BOOL)compareAge:(Student *)_student;
 
 -(void)studentException;
+#pragma mark - 类方法
++(void)leiFangFa;
+
++(Student *) student:(NSString *)_name
+                    :(int)_age
+                    :(float)_height;
 @end
 

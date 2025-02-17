@@ -108,6 +108,10 @@ int main(int argc, char * argv[]) {
             NSLog(@"@finally");
         }
     
+        //类方法调用
+        [Student leiFangFa];
+        Student *ss = [Student student:@"qinyue":222:22.33f];
+        NSLog(@"%@====%d======%f",ss->_name,ss->_age,ss->_height);
         
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);

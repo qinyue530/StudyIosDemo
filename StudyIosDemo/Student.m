@@ -68,4 +68,18 @@
 - (BOOL)compareAge:(Student *)_student{
     return _age>_student->_age;
 }
+#pragma mark - 类方法
++ (void)leiFangFa{
+    NSLog(@"leiFangFa 类方法");
+}
+
++(Student *) student:(NSString *)_name
+                    :(int)_age
+                    :(float)_height{
+    Student *s1 = [Student new];
+    s1->_name = _name;
+    s1->_age = _age;
+    s1->_height = _height;
+    return s1;
+}
 @end
