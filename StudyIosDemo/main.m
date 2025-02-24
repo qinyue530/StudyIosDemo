@@ -111,7 +111,22 @@ int main(int argc, char * argv[]) {
         //类方法调用
         [Student leiFangFa];
         Student *ss = [Student student:@"qinyue":222:22.33f];
-        NSLog(@"%@====%d======%f",ss->_name,ss->_age,ss->_height);
+        NSLog(@"%@===变量地址：%p====%d======%f",ss->_name,ss->_name,ss->_age,ss->_height);
+        
+        NSString *ns = @"123";
+        NSLog(@"%@",ns);
+        //C语言字符串
+        char *str0 = "qinyue";
+        //C语言字符串转为OC
+        NSString *nsstr = [NSString stringWithUTF8String:str0];
+        //字符串拼接
+        NSString *swf = [NSString stringWithFormat:@"name %@ ,age %d , height %f" , ss->_name , ss->_age,ss->_height];
+        NSLog(@"%@",swf);
+        //字符串长度
+        int length = [swf length];
+        NSLog(@"=======%d",length);
+        
+        
         
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
