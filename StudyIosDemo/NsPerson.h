@@ -20,6 +20,13 @@
 }
 
 #pragma mark - NsPerson方法声明
+- (void)setName:(NSString*)name;
+- (void)setAge:(int)age;
+- (void)setHeight:(float)height;
+- (NSString *)getName;
+- (int)getAge;
+- (float)getHeight;
+
 //无参数方法
 - (void)run ;
 - (int)runInt ;
@@ -30,5 +37,8 @@
                          :(int)sum;
 - (int)sumWith:(int) addA
               :(int) addB;
+- (int)staticMethodTest;
+
+- (instancetype) nsPerson:(NsPerson *) n1;
 @end
 

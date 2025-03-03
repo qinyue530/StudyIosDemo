@@ -123,10 +123,29 @@ int main(int argc, char * argv[]) {
         NSString *swf = [NSString stringWithFormat:@"name %@ ,age %d , height %f" , ss->_name , ss->_age,ss->_height];
         NSLog(@"%@",swf);
         //字符串长度
-        int length = [swf length];
-        NSLog(@"=======%d",length);
+        NSUInteger length = [swf length];
+        NSLog(@"=======%lu",length);
+        //字符串判断
+        BOOL eqResult = [nsstr isEqualToString:swf];
+        NSLog(@"=======%d",eqResult);
         
-        
+        //匿名对象 没有名字对象，没有用1个指针去存储这个对象的地址
+        [[NsPerson new] runInt];
+        NsPerson* myPerson = [NsPerson new];
+        [myPerson setAge:111];
+        [myPerson setName:@"adjakf"];
+        [myPerson setHeight:123.55f];
+        NSLog(@"get 获取值 -----%@-------%d-------%f",[myPerson getName],[myPerson getAge],[myPerson getHeight]);
+        //static 不能修饰熟悉和方法
+        //static可以修饰方法中的局部变量．
+        //如果方法中的局部变量被static修饰，那么这个变量就会被变成静态变量.
+        //存储在常量区当方法执行完毕之后不会回收下次再执行这个方法的时候直接使用而不会再声明了.
+        NsPerson* n1 = [NsPerson new];
+        [n1 nsPerson:myPerson];
+        [myPerson staticMethodTest];
+        [myPerson staticMethodTest];
+        [myPerson staticMethodTest];
+        [myPerson staticMethodTest];
         
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
