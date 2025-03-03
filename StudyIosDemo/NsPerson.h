@@ -40,5 +40,7 @@
 - (int)staticMethodTest;
 
 - (instancetype) nsPerson:(NsPerson *) n1;
+
+- (void) selfMethodTest;
 @end
 

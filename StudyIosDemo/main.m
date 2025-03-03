@@ -142,10 +142,12 @@ int main(int argc, char * argv[]) {
         //存储在常量区当方法执行完毕之后不会回收下次再执行这个方法的时候直接使用而不会再声明了.
         NsPerson* n1 = [NsPerson new];
         [n1 nsPerson:myPerson];
-        [myPerson staticMethodTest];
-        [myPerson staticMethodTest];
-        [myPerson staticMethodTest];
-        [myPerson staticMethodTest];
+        [n1 staticMethodTest];
+        [n1 staticMethodTest];
+        [n1 staticMethodTest];
+        [n1 staticMethodTest];
+        
+        [n1 selfMethodTest];
         
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);

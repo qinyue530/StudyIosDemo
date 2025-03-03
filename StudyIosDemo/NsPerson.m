@@ -67,4 +67,10 @@
     return n1;
 };
 
+- (void) selfMethodTest{
+    NSString* _name = @"selfMethodTest";
+    self->_name = @"NsPerson - > _name";
+    NSLog(@"%@ ========= %@" , _name , self->_name);
+    [self runInt];
+};
 @end
