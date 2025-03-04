@@ -13,9 +13,15 @@
 //有参数方法
 - (void)eat:(NSString *)food
            :(int)sum{
-    NSLog(@"%@ ======= %d",food , sum);
+    NSLog(@"Student  eat   start %@ ======= %d",food , sum);
+    [self runInt];
+    [super runInt];
+    NSLog(@"Student  eat   end %@ ======= %d",food , sum);
 }
-
+- (int)runInt {
+    NSLog(@"======= Student runInt  =======");
+    return 111;
+}
 - (NSString *)eatNSString:(NSString *)food
            :(int)sum{
     NSLog(@"%@ ======= %d",food , sum);

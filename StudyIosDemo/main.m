@@ -154,6 +154,8 @@ int main(int argc, char * argv[]) {
         [ss run];
         [ss runInt];
         
+        [ss eat:nsPerson->_name :nsPerson->_height];
+        
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }

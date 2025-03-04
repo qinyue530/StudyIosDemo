@@ -34,7 +34,7 @@
     NSLog(@"======= run  ======= %@======%d=======%f",_name,_age,_height);
 }
 - (int)runInt {
-    NSLog(@"======= runInt  =======");
+    NSLog(@"======= NsPerson runInt  =======");
     return 111;
 }
 //有参数方法
@@ -72,5 +72,6 @@
     self->_name = @"NsPerson - > _name";
     NSLog(@"%@ ========= %@" , _name , self->_name);
     [self runInt];
+    
 };
 @end
