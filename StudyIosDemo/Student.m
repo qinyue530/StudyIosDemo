@@ -14,7 +14,9 @@
 - (void)eat:(NSString *)food
            :(int)sum{
     NSLog(@"Student  eat   start %@ ======= %d",food , sum);
+    //执行当前类方法
     [self runInt];
+    //执行父类方法
     [super runInt];
     NSLog(@"Student  eat   end %@ ======= %d",food , sum);
 }
