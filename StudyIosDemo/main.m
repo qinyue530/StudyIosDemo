@@ -149,6 +149,11 @@ int main(int argc, char * argv[]) {
         
         [n1 selfMethodTest];
         
+        
+        
+        [ss run];
+        [ss runInt];
+        
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }

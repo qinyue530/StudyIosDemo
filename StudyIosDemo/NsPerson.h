@@ -17,6 +17,7 @@
     NSString *_name;
     int _age;
     float _height;
+    NsPerson *_sNsPerson;
 }
 
 #pragma mark - NsPerson方法声明

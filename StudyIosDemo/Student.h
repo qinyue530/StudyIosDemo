@@ -12,19 +12,12 @@
 
 #pragma mark - Student声明
 //新建类
-@interface Student : NSObject{
-    //不允许在声明的时候初始化赋值
-    @public
-    NSString *_name;
-    int _age;
-    float _height;
-    NsPerson *_sNsPerson;
+@interface Student : NsPerson{
+
 }
 
 #pragma mark - Student方法声明
-//无参数方法
-- (void)run ;
-- (int)runInt ;
+
 //有参数方法
 - (void)eat:(NSString *)food
            :(int)sum;
