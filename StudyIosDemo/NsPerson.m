@@ -72,6 +72,12 @@
     self->_name = @"NsPerson - > _name";
     NSLog(@"%@ ========= %@" , _name , self->_name);
     [self runInt];
+    [self privateMethodTest];
     
+};
+//私有方法， 只写实现，不写声明
+- (void) privateMethodTest{
+    NSString* _name = @"privateMethodTest";
+    NSLog(@"%@ ===privateMethodTest======" , _name );
 };
 @end
