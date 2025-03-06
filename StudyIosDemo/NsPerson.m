@@ -80,4 +80,8 @@
     NSString* _name = @"privateMethodTest";
     NSLog(@"%@ ===privateMethodTest======" , _name );
 };
+//类方法
++ (void)addMethodTest{
+    NSLog(@"=======NsPerson addMethodTest  =======");
+}
 @end

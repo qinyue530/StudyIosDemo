@@ -169,7 +169,15 @@ int main(int argc, char * argv[]) {
         NSLog(@"%@" , ns1);
         //地址
         NSLog(@"%@" , ns2);
-        
+        NSLog(@"================获取Class对象地址 Start================");
+        Class cl1 = [personA class];
+        Class cl2 = [NsPerson class];
+        NSLog(@"%p------%p------%p" , cl1,cl2,ns1);
+        NSLog(@"%@------%@" , cl1,cl2);
+        [cl1 addMethodTest];
+        //class 获取类地址。创建对象
+        NsPerson *persconClasss = [cl2 new];
+        [persconClasss runInt];
         
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);

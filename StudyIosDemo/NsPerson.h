@@ -43,5 +43,7 @@
 - (instancetype) nsPerson:(NsPerson *) n1;
 
 - (void) selfMethodTest;
+//类方法
++ (void)addMethodTest;
 @end
 
