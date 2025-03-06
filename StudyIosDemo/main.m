@@ -159,6 +159,15 @@ int main(int argc, char * argv[]) {
         [tea1 run];
         [tea2 run];
         
+        tea1->_name = @"iqjdjfsj";
+        
+        //NsPerson description 方法 类似Java的toString
+        NSString *ns1 = [tea1->_name description];
+        NSString *ns2 = [tea1 description];
+        //字符串
+        NSLog(@"%@" , ns1);
+        //地址
+        NSLog(@"%@" , ns2);
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }
