@@ -154,6 +154,7 @@ int main(int argc, char * argv[]) {
         NSLog(@"================多态 Start================");
         Teacher *tea1 = [Teacher new];
         NsPerson *tea2 = [Teacher new];
+        [Teacher addMethodTest];
         [tea1 runInt];
         [tea1 selfMethodTest];
         [tea1 run];
@@ -168,6 +169,8 @@ int main(int argc, char * argv[]) {
         NSLog(@"%@" , ns1);
         //地址
         NSLog(@"%@" , ns2);
+        
+        
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }

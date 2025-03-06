@@ -12,4 +12,8 @@
     //方法中使用对象属性
     NSLog(@"=======Teacher run  =======");
 }
+
++ (void)addMethodTest{
+    NSLog(@"=======Teacher addMethodTest  =======");
+}
 @end
