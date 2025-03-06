@@ -16,6 +16,7 @@
 		602F3C002D5C93300040C01D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 602F3BFF2D5C93300040C01D /* main.m */; };
 		6090E8D82D5DC73E00348316 /* NsPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090E8D72D5DC73E00348316 /* NsPerson.m */; };
 		6090E8DB2D5DCD5000348316 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090E8DA2D5DCD5000348316 /* Student.m */; };
+		60DC599A2D792A380037A90C /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DC59992D792A380037A90C /* Teacher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		6090E8D72D5DC73E00348316 /* NsPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NsPerson.m; sourceTree = "<group>"; };
 		6090E8D92D5DCD4600348316 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		6090E8DA2D5DCD5000348316 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		60DC59982D792A380037A90C /* Teacher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		60DC59992D792A380037A90C /* Teacher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 				6090E8D72D5DC73E00348316 /* NsPerson.m */,
 				6090E8D92D5DCD4600348316 /* Student.h */,
 				6090E8DA2D5DCD5000348316 /* Student.m */,
+				60DC59982D792A380037A90C /* Teacher.h */,
+				60DC59992D792A380037A90C /* Teacher.m */,
 			);
 			path = StudyIosDemo;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				602F3BF52D5C932F0040C01D /* ViewController.m in Sources */,
+				60DC599A2D792A380037A90C /* Teacher.m in Sources */,
 				6090E8D82D5DC73E00348316 /* NsPerson.m in Sources */,
 				602F3BEF2D5C932F0040C01D /* AppDelegate.m in Sources */,
 				602F3C002D5C93300040C01D /* main.m in Sources */,

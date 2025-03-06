@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "NsPerson.h"
 #import "Student.h"
+#import "Teacher.h"
 /**
  .h     头文件     写类声明
  ,m    实现文件    写类的实现
@@ -146,15 +147,17 @@ int main(int argc, char * argv[]) {
         [n1 staticMethodTest];
         [n1 staticMethodTest];
         [n1 staticMethodTest];
-        
         [n1 selfMethodTest];
-        
-        
-        
         [ss run];
         [ss runInt];
-        
         [ss eat:nsPerson->_name :nsPerson->_height];
+        NSLog(@"================多态 Start================");
+        Teacher *tea1 = [Teacher new];
+        NsPerson *tea2 = [Teacher new];
+        [tea1 runInt];
+        [tea1 selfMethodTest];
+        [tea1 run];
+        [tea2 run];
         
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
