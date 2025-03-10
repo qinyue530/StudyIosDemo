@@ -12,6 +12,8 @@
 @implementation NsPerson
 - (void)setName:(NSString*)name{
     _name = name;
+    // 错误使用self.name  相当于 [NsPerson setName] 形成递归 死循环 使程序崩溃
+    //self.name = name;
 };
 - (void)setAge:(int)age{
     _age = age;
