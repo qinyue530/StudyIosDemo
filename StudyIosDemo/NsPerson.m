@@ -19,21 +19,21 @@
 //    // 错误使用self.name  相当于 [NsPerson setName] 形成递归 死循环 使程序崩溃
 //    //self.name = name;
 //};
-@synthesize name;
+@synthesize name = _name , sex = _sex , idno = _idno , age = _age , height = _height , sNsPerson = _sNsPerson;
 
-- (void)setAge:(int)age{
-    _age = age;
-};
-- (void)setHeight:(float)height{
-    _height = height;
-};
+//- (void)setAge:(int)age{
+//    _age = age;
+//};
+//- (void)setHeight:(float)height{
+//    _height = height;
+//};
 
-- (int)age{
-    return _age;
-};
-- (float)height{
-    return _height;
-};
+//- (int)age{
+//    return _age;
+//};
+//- (float)height{
+//    return _height;
+//};
 //无参数方法实现
 - (void)run {
     //方法中使用对象属性

@@ -15,6 +15,8 @@
     //不允许在声明的时候初始化赋值
     @public
     NSString *_name;
+    NSString *_idno;
+    NSString *_sex;
     int _age;
     float _height;
     NsPerson *_sNsPerson;
@@ -24,11 +26,14 @@
 //@property 自动生成get 和set 方法 ， 仅生成声明，实现还要写
 //- (NSString *)name;
 //- (void)setName:(NSString*)name;
-@property NSString *name;
-- (void)setAge:(int)age;
-- (void)setHeight:(float)height;
-- (int)age;
-- (float)height;
+@property NSString *name,*idno,*sex;
+@property int age;
+@property float height;
+@property NsPerson *sNsPerson;
+//- (void)setAge:(int)age;
+//- (void)setHeight:(float)height;
+//- (int)age;
+//- (float)height;
 
 //无参数方法
 - (void)run ;
