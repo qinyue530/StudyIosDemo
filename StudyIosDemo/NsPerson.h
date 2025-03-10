@@ -21,7 +21,7 @@
 }
 
 #pragma mark - NsPerson方法声明
-//@property 自动生成get 和set 方法
+//@property 自动生成get 和set 方法 ， 仅生成声明，实现还要写
 //- (NSString *)name;
 //- (void)setName:(NSString*)name;
 @property NSString *name;
