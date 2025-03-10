@@ -21,10 +21,12 @@
 }
 
 #pragma mark - NsPerson方法声明
-- (void)setName:(NSString*)name;
+//@property 自动生成get 和set 方法
+//- (NSString *)name;
+//- (void)setName:(NSString*)name;
+@property NSString *name;
 - (void)setAge:(int)age;
 - (void)setHeight:(float)height;
-- (NSString *)name;
 - (int)age;
 - (float)height;
 
