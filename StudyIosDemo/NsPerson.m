@@ -19,13 +19,13 @@
 - (void)setHeight:(float)height{
     _height = height;
 };
-- (NSString *)getName{
+- (NSString *)name{
     return _name;
 };
-- (int)getAge{
+- (int)age{
     return _age;
 };
-- (float)getHeight{
+- (float)height{
     return _height;
 };
 //无参数方法实现
@@ -54,7 +54,16 @@
     NSLog(@"%d + %d = %d",addA , addB,addA + addB);
     return addA+addB;
 }
+- (NSNumber *)oneJoinMethod:(NSNumber *) addA{
+    NSLog(@"一个入参的方法---%@ ",addA );
+    return addA;
+}
 
+- (NSString *)twoJoinMethod:(NSString *) addA
+                           :(NSString *) addB{
+    NSLog(@"两个入参的方法---%@---%@ ",addA,addB );
+    return @"twoJoinMethod";
+}
 - (int)staticMethodTest{
     static int a = 111;
     a++;

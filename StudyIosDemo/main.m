@@ -136,7 +136,7 @@ int main(int argc, char * argv[]) {
         [myPerson setAge:111];
         [myPerson setName:@"adjakf"];
         [myPerson setHeight:123.55f];
-        NSLog(@"get 获取值 -----%@-------%d-------%f",[myPerson getName],[myPerson getAge],[myPerson getHeight]);
+        NSLog(@"get 获取值 -----%@-------%d-------%f",[myPerson name],[myPerson age],[myPerson height]);
         //static 不能修饰熟悉和方法
         //static可以修饰方法中的局部变量．
         //如果方法中的局部变量被static修饰，那么这个变量就会被变成静态变量.
@@ -170,6 +170,7 @@ int main(int argc, char * argv[]) {
         //地址
         NSLog(@"%@" , ns2);
         NSLog(@"================获取Class对象地址 Start================");
+        //类似Java反射机制
         Class cl1 = [personA class];
         Class cl2 = [NsPerson class];
         NSLog(@"%p------%p------%p" , cl1,cl2,ns1);
@@ -178,7 +179,23 @@ int main(int argc, char * argv[]) {
         //class 获取类地址。创建对象
         NsPerson *persconClasss = [cl2 new];
         [persconClasss runInt];
+        //没有入参
+        SEL s0 = @selector(runInt);
+        //一个入参
+        SEL s1 = @selector(oneJoinMethod:);
+        //不能使用
+        //SEL s2 = @selector(twoJoinMethod:);
+        NSLog(@"s1 = %p", s0);
+        [persconClasss performSelector:s0];
+        [persconClasss performSelector:s1 withObject:[NSNumber numberWithInt:123]];
+        //不能使用
+        //[persconClasss performSelector:s2 withObject:@"123" withObject:@"qwe"];
+        //相当于 [persconClasss setName:@"12312"] 调用set方法
+        persconClasss.name = @"12312";
+        //相当于[persconClasss name]  调用get方法
+        NSLog(@"------- %@" , persconClasss.name);
         
+    
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }

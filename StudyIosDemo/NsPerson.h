@@ -24,9 +24,9 @@
 - (void)setName:(NSString*)name;
 - (void)setAge:(int)age;
 - (void)setHeight:(float)height;
-- (NSString *)getName;
-- (int)getAge;
-- (float)getHeight;
+- (NSString *)name;
+- (int)age;
+- (float)height;
 
 //无参数方法
 - (void)run ;
@@ -38,6 +38,9 @@
                          :(int)sum;
 - (int)sumWith:(int) addA
               :(int) addB;
+- (NSNumber *)oneJoinMethod:(NSNumber *) addA;
+- (NSString *)twoJoinMethod:(NSString *) addA
+                           :(NSString *) addB;
 - (int)staticMethodTest;
 
 - (instancetype) nsPerson:(NsPerson *) n1;
