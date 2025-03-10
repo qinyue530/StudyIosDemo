@@ -10,20 +10,24 @@
 #pragma mark - NsPerson方法实现
 //方法
 @implementation NsPerson
-- (void)setName:(NSString*)name{
-    _name = name;
-    // 错误使用self.name  相当于 [NsPerson setName] 形成递归 死循环 使程序崩溃
-    //self.name = name;
-};
+//名字与 @property名字一样 ， 自动实现get和set方法
+//- (NSString *)name{
+//    return _name;
+//};
+//- (void)setName:(NSString*)name{
+//    _name = name;
+//    // 错误使用self.name  相当于 [NsPerson setName] 形成递归 死循环 使程序崩溃
+//    //self.name = name;
+//};
+@synthesize name;
+
 - (void)setAge:(int)age{
     _age = age;
 };
 - (void)setHeight:(float)height{
     _height = height;
 };
-- (NSString *)name{
-    return _name;
-};
+
 - (int)age{
     return _age;
 };
