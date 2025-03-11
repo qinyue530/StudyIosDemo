@@ -218,6 +218,37 @@ int main(int argc, char * argv[]) {
         NSString* str5 = [NsPerson idNsPerson];
         str5=@"2ujkahdasa";
         NSLog(@"str5的长度 = %d", str5.length);
+        // 0 - false  , 1 - true
+        //判断对象中是否存在该方法
+        BOOL* bo1 = [ns5 respondsToSelector:@selector(runInt)];
+        if(bo1){
+            [ns5 runInt];
+        }else{
+            NSLog(@"runInt 方法不存在");
+        }
+        //判断一个对象是否为指定类或指定类的子类的实例
+        bo1 = [st5 isKindOfClass:[NsPerson class]];
+        NSLog(@"st5 为NsPerson及子类对象吗 %d" , bo1);
+        bo1 = [st5 isKindOfClass:[Student class]];
+        NSLog(@"st5 为Student及子类对象吗 %d" , bo1);
+        //判断一个对象是否为指定类对象 不包含子类
+        bo1 = [st5 isMemberOfClass:[NsPerson class]];
+        NSLog(@"st5 为NsPerson对象吗 %d" , bo1);
+        bo1 = [st5 isMemberOfClass:[Student class]];
+        NSLog(@"st5 为Student对象吗 %d" , bo1);
+        //判断类是否为另外一个类的子类
+        bo1 = [Student isSubclassOfClass:[Student class]];
+        NSLog(@"Student是否为Student的子类 %d" , bo1);
+        bo1 = [Student isSubclassOfClass:[NsPerson class]];
+        NSLog(@"Student是否为NsPerson的子类 %d" , bo1);
+        bo1 = [NsPerson isSubclassOfClass:[Student class]];
+        NSLog(@"NsPerson是否为Student的子类 %d" , bo1);
+        //判断类中是否有指定的方法（不包含类方法 ）
+        bo1 = [Student instancesRespondToSelector:@selector(runInt)];
+        NSLog(@"Student是否有runInt方法 %d" , bo1);
+        bo1 = [Student instancesRespondToSelector:@selector(leiFangFa)];
+        NSLog(@"Student是否有leiFangFa方法 %d" , bo1);
+        
     
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
