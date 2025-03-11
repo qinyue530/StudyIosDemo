@@ -195,10 +195,17 @@ int main(int argc, char * argv[]) {
         //相当于[persconClasss name]  调用get方法
         NSLog(@"------- %@" , persconClasss.name);
         
+        //万能指针
         NSObject *obj = @"123123";
-        //类型强转
+        //需要类型强转 调用方法
         int objLength = [(NSString *)obj length];
         NSLog(@"objLength的长度 = %d", objLength);
+        //id是1个typedef自定义类型 万能指针，任意的OC对象都可以指,
+        id testID = @"qweqweq";
+        //调用对象方法 不需要做类型强转,也不会检查方法在对象中是否真实存在,不能使用点语法
+        int idLength = [testID length];
+        //[testID runInt];
+        NSLog(@"testID的长度 = %d", idLength);
         
     
     }
