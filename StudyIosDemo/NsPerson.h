@@ -29,8 +29,7 @@
 //- (NSString *)name;
 //- (void)setName:(NSString*)name;
 
-@property NSString *name;
-@property NSString *idno,*sex;
+@property NSString *name,*idno,*sex;
 @property int age;
 @property float height;
 @property NsPerson *sNsPerson;
