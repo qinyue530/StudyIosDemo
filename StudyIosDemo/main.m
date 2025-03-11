@@ -195,6 +195,11 @@ int main(int argc, char * argv[]) {
         //相当于[persconClasss name]  调用get方法
         NSLog(@"------- %@" , persconClasss.name);
         
+        NSObject *obj = @"123123";
+        //类型强转
+        int objLength = [(NSString *)obj length];
+        NSLog(@"objLength的长度 = %d", objLength);
+        
     
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
