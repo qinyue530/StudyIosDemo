@@ -37,8 +37,8 @@
 }
 
 - (int)getPersonName:(NsPerson *)nsPerson{
-    NSLog(@"getPersonName========%@" , nsPerson->_name);
-    nsPerson->_name = @"大黄";
+    NSLog(@"getPersonName========%@" , nsPerson.name);
+    nsPerson.name = @"大黄";
     return 111l;
 }
 
@@ -46,9 +46,9 @@
                        :(int)_age
                        :(float)_height{
     NsPerson* nsPerson = [NsPerson new];
-    nsPerson->_name = _name;
-    nsPerson->_age = _age;
-    nsPerson->_height = _height;
+    nsPerson.name = _name;
+    nsPerson.age = _age;
+    nsPerson.height = _height;
     return nsPerson;
 }
 -(void)studentException{
@@ -59,15 +59,15 @@
                   :(int)_age
                   :(float)_height{
     Student* myStudent = [Student new];
-    myStudent->_age=_age;
-    myStudent->_name=_name;
-    myStudent->_height=_height;
-    myStudent->_sNsPerson = _nsPerson;
+    myStudent.age=_age;
+    myStudent.name=_name;
+    myStudent.height=_height;
+    myStudent.sNsPerson = _nsPerson;
     return myStudent;
 }
 
 - (BOOL)compareAge:(Student *)_student{
-    return _age>_student->_age;
+    return self.age>_student.age;
 }
 #pragma mark - 类方法
 + (void)leiFangFa{
@@ -78,9 +78,9 @@
                     :(int)_age
                     :(float)_height{
     Student *s1 = [Student new];
-    s1->_name = _name;
-    s1->_age = _age;
-    s1->_height = _height;
+    s1.name = _name;
+    s1.age = _age;
+    s1.height = _height;
     return s1;
 }
 @end

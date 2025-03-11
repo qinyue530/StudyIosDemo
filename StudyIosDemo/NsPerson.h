@@ -11,22 +11,26 @@
 
 #pragma mark - NsPerson声明
 //新建类
-@interface NsPerson : NSObject{
-    //不允许在声明的时候初始化赋值
-    @public
-    NSString *_name;
-    NSString *_idno;
-    NSString *_sex;
-    int _age;
-    float _height;
-    NsPerson *_sNsPerson;
-}
+@interface NsPerson : NSObject
+
+//{
+//    //不允许在声明的时候初始化赋值
+//    @public
+//    NSString *_name;
+//    NSString *_idno;
+//    NSString *_sex;
+//    int _age;
+//    float _height;
+//    NsPerson *_sNsPerson;
+//}
 
 #pragma mark - NsPerson方法声明
 //@property 自动生成get 和set 方法 ， 仅生成声明，实现还要写
 //- (NSString *)name;
 //- (void)setName:(NSString*)name;
-@property NSString *name,*idno,*sex;
+
+@property NSString *name;
+@property NSString *idno,*sex;
 @property int age;
 @property float height;
 @property NsPerson *sNsPerson;

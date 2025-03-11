@@ -47,12 +47,12 @@ int main(int argc, char * argv[]) {
         }
         
         NsPerson *nsPerson = [NsPerson new];
-        nsPerson->_name = @"qinyue";
-        nsPerson->_height = 12.2f;
-        NSLog(@"===========%@ ======== %f" , nsPerson->_name , nsPerson->_height);
-        (*nsPerson)._name = @"qinyue";
-        (*nsPerson)._height = 111.11f;
-        NSLog(@"===========%@ ======== %f" , nsPerson->_name , nsPerson->_height);
+        nsPerson.name = @"qinyue";
+        nsPerson.height = 12.2f;
+        NSLog(@"===========%@ ======== %f" , nsPerson.name , nsPerson.height);
+        nsPerson.name = @"qinyue";
+        nsPerson.height = 111.11f;
+        NSLog(@"===========%@ ======== %f" , nsPerson.name , nsPerson.height);
         
         NSLog(@"\n");
         NSLog(@"\n");
@@ -64,8 +64,8 @@ int main(int argc, char * argv[]) {
         NSLog(@"\n");
         NSLog(@"\n");
         NSLog(@"\n");
-        [nsPerson eat:nsPerson->_name :nsPerson->_height];
-        NSString *eatResult = [nsPerson eatNSString:nsPerson->_name :nsPerson->_height];
+        [nsPerson eat:nsPerson.name :nsPerson.height];
+        NSString *eatResult = [nsPerson eatNSString:nsPerson.name :nsPerson.height];
         NSLog(@"%@" , eatResult);
         [nsPerson sumWith:5 :7];
         NSLog(@"\n");
@@ -73,27 +73,27 @@ int main(int argc, char * argv[]) {
         NSLog(@"\n");
         
         NsPerson *personA = [NsPerson new];
-        personA->_name=@"AAA";
+        personA.name=@"AAA";
         NsPerson *personB = personA;
-        personB->_name = @"BBB";
+        personB.name = @"BBB";
         NsPerson *personC = personB;
-        personC->_name = @"CCC";
-        NSLog(@"%@=======%@=========%@" , personA->_name , personB->_name , personC->_name);
+        personC.name = @"CCC";
+        NSLog(@"%@=======%@=========%@" , personA.name , personB.name , personC.name);
         test();
         
         Student *_student = [Student new];
         //对象作为参数的方法 是地址传递，方法中的赋值会影响传入对象的值
         [_student getPersonName:nsPerson];
-        NSLog(@"以对象作为参数的方法====%@",nsPerson->_name);
+        NSLog(@"以对象作为参数的方法====%@",nsPerson.name);
         
         NsPerson *nsPersonQ = [_student getPerson:@"qinyue" :11 :111.12f];
-        NSLog(@"以对象作为返回值的方法=====%@=======%d=======%f",nsPersonQ->_name,nsPersonQ->_age,nsPersonQ->_height);
+        NSLog(@"以对象作为返回值的方法=====%@=======%d=======%f",nsPersonQ.name,nsPersonQ.age,nsPersonQ.height);
         
         Student* std = [Student new];
         std = [std makeStudent:nsPersonQ :@"qqq" :222 :333.33f ];
         NSLog(@"以对象作为属性==NsPerson===%@====%d====%f=====Student=====%@=====%d=====%f",
-              std->_sNsPerson->_name, std->_sNsPerson->_age,std->_sNsPerson->_height
-              ,std->_name,std->_age,std->_height);
+              std.sNsPerson.name, std.sNsPerson.age,std.sNsPerson.height
+              ,std.name,std.age,std.height);
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
         
         BOOL compareResult = [std compareAge:_student];
@@ -112,7 +112,7 @@ int main(int argc, char * argv[]) {
         //类方法调用
         [Student leiFangFa];
         Student *ss = [Student student:@"qinyue":222:22.33f];
-        NSLog(@"%@===变量地址：%p====%d======%f",ss->_name,ss->_name,ss->_age,ss->_height);
+        NSLog(@"%@===变量地址：%p====%d======%f",ss.name,ss.name,ss.age,ss.height);
         
         NSString *ns = @"123";
         NSLog(@"%@",ns);
@@ -121,7 +121,7 @@ int main(int argc, char * argv[]) {
         //C语言字符串转为OC
         NSString *nsstr = [NSString stringWithUTF8String:str0];
         //字符串拼接
-        NSString *swf = [NSString stringWithFormat:@"name %@ ,age %d , height %f" , ss->_name , ss->_age,ss->_height];
+        NSString *swf = [NSString stringWithFormat:@"name %@ ,age %d , height %f" , ss.name , ss.age,ss.height];
         NSLog(@"%@",swf);
         //字符串长度
         NSUInteger length = [swf length];
@@ -150,7 +150,7 @@ int main(int argc, char * argv[]) {
         [n1 selfMethodTest];
         [ss run];
         [ss runInt];
-        [ss eat:nsPerson->_name :nsPerson->_height];
+        [ss eat:nsPerson.name :nsPerson.height];
         NSLog(@"================多态 Start================");
         Teacher *tea1 = [Teacher new];
         NsPerson *tea2 = [Teacher new];
@@ -160,10 +160,10 @@ int main(int argc, char * argv[]) {
         [tea1 run];
         [tea2 run];
         
-        tea1->_name = @"iqjdjfsj";
+        tea1.name = @"iqjdjfsj";
         
         //NsPerson description 方法 类似Java的toString
-        NSString *ns1 = [tea1->_name description];
+        NSString *ns1 = [tea1.name description];
         NSString *ns2 = [tea1 description];
         //字符串
         NSLog(@"%@" , ns1);

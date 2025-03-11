@@ -10,6 +10,9 @@
 #pragma mark - NsPerson方法实现
 //方法
 @implementation NsPerson
+
+//@synthesize name = _name , sex = _sex , idno = _idno , age = _age , height = _height , sNsPerson = _sNsPerson;
+
 //名字与 @property名字一样 ， 自动实现get和set方法
 //- (NSString *)name{
 //    return _name;
@@ -19,8 +22,6 @@
 //    // 错误使用self.name  相当于 [NsPerson setName] 形成递归 死循环 使程序崩溃
 //    //self.name = name;
 //};
-@synthesize name = _name , sex = _sex , idno = _idno , age = _age , height = _height , sNsPerson = _sNsPerson;
-
 //- (void)setAge:(int)age{
 //    _age = age;
 //};
