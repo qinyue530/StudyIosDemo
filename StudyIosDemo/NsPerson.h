@@ -61,5 +61,11 @@
 
 + (instancetype)nsPerson;
 + (id)idNsPerson;
+
+- (instancetype) init;
+//自定义构造方法 只有 initWithXXX 会识别为构造方法 注意大小写
+- (instancetype) initWithAll:(NSString *)name
+                            :(int)age
+                            :(float)height;
 @end
 

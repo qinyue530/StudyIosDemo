@@ -249,7 +249,11 @@ int main(int argc, char * argv[]) {
         bo1 = [Student instancesRespondToSelector:@selector(leiFangFa)];
         NSLog(@"Student是否有leiFangFa方法 %d" , bo1);
         
-    
+        //相当于 NsPerson *ns7 = [NsPerson new];
+        NsPerson *ns6 = [[NsPerson alloc] init];
+        NsPerson *ns7 = [[NsPerson alloc] initWithAll:@"qinyue" :11 :124.2f];
+        NSLog(@"自定义构造方法 %@------%d------%f" , ns7.name,ns7.age,ns7.height);
+        
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }

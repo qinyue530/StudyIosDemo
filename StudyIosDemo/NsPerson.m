@@ -107,4 +107,24 @@
 + (id)idNsPerson{
     return [self new];
 }
+- (instancetype) init{
+    NSLog(@"自定义init");
+    self = [super init];
+    if(self){
+        self.height = 123.23f;
+    }
+    return self;
+}
+//自定义构造方法 只有 initWithXXX 会识别为构造方法 注意大小写
+- (instancetype) initWithAll:(NSString *)name
+                            :(int)age
+                            :(float)height{
+    self = [super init];
+    if(self){
+        self.name = name;
+        self.age = age;
+        self.height = height
+    }
+    return self;
+}
 @end
