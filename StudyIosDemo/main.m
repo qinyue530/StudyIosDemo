@@ -217,7 +217,7 @@ int main(int argc, char * argv[]) {
         Student* st5= [Student idNsPerson];
         NSString* str5 = [NsPerson idNsPerson];
         str5=@"2ujkahdasa";
-        NSLog(@"str4的长度 = %d", str5.length);
+        NSLog(@"str5的长度 = %d", str5.length);
     
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);
