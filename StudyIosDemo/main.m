@@ -207,6 +207,17 @@ int main(int argc, char * argv[]) {
         //[testID runInt];
         NSLog(@"testID的长度 = %d", idLength);
         
+        //返回值为id 与  instancetype
+        NsPerson* ns4 = [NsPerson nsPerson];
+        Student* st4 = [Student nsPerson];
+        NSString* str4 = [NsPerson nsPerson];
+        str4=@"2ujkahdasa";
+        NSLog(@"str4的长度 = %d", str4.length);
+        NsPerson* ns5 = [NsPerson idNsPerson];
+        Student* st5= [Student idNsPerson];
+        NSString* str5 = [NsPerson idNsPerson];
+        str5=@"2ujkahdasa";
+        NSLog(@"str4的长度 = %d", str5.length);
     
     }
     return UIApplicationMain(argc, argv, nil, appDelegateClassName);

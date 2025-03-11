@@ -58,5 +58,8 @@
 - (void) selfMethodTest;
 //类方法
 + (void)addMethodTest;
+
++ (instancetype)nsPerson;
++ (id)idNsPerson;
 @end
 

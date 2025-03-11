@@ -100,4 +100,11 @@
 + (void)addMethodTest{
     NSLog(@"=======NsPerson addMethodTest  =======");
 }
+
++ (instancetype)nsPerson{
+    return [self new];
+}
++ (id)idNsPerson{
+    return [self new];
+}
 @end
