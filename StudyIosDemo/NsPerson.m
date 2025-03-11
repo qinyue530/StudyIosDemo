@@ -123,7 +123,7 @@
     if(self){
         self.name = name;
         self.age = age;
-        self.height = height
+        self.height = height;
     }
     return self;
 }
