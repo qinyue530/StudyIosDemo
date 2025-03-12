@@ -267,6 +267,11 @@ int main(int argc, char * argv[]) {
 //        [ns6 retain];
 //        rc =[ns6 retainCount];
 //        NSLog(@"ns6 引用计数器  %d" , rc);
+        Car* car = [Car new];
+        [car setSnsPerson:nsPerson];
+        //对象存储到当前自动释放池
+        //[car autorelease];
+        
     }
     //return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }

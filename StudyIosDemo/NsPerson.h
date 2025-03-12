@@ -5,6 +5,7 @@
 //  Created by 秦跃 on 2025/2/13.
 //
 #import <Foundation/Foundation.h>
+#import "Car.h"
 #ifndef NsPerson_h
 #define NsPerson_h
 #endif /* NsPerson_h */
@@ -53,6 +54,8 @@
 
 //默认为atomic
 @property(atomic,assign,readwrite,getter=getSnsPerson,setter=snsPerson:) NsPerson *sNsPerson;
+
+@property(atomic,assign,readwrite,getter=getCar,setter=car:) Car *car;
 //- (void)setAge:(int)age;
 //- (void)setHeight:(float)height;
 //- (int)age;
@@ -88,6 +91,6 @@
                             :(int)age
                             :(float)height;
 
-- (void)dealloc;
+//- (void)dealloc;
 @end
 
