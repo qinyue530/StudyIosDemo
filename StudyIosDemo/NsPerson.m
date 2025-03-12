@@ -127,4 +127,9 @@
     }
     return self;
 }
+
+- (void)dealloc{
+    NSLog(@"对象回收");
+    [super dealloc];
+}
 @end

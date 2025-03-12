@@ -253,9 +253,22 @@ int main(int argc, char * argv[]) {
         NsPerson *ns6 = [[NsPerson alloc] init];
         NsPerson *ns7 = [[NsPerson alloc] initWithAll:@"qinyue" :11 :124.2f];
         NSLog(@"自定义构造方法 %@------%d------%f" , ns7.name,ns7.age,ns7.height);
-        
+        //ARC模式 使用
+        //引用计数器
+        int rc =[ns6 retainCount];
+        NSLog(@"ns6 引用计数器  %d" , rc);
+        //引用加1
+        [ns6 retain];
+        //引用减1 为0时回收
+        [ns6 release];
+        [ns6 release];
+        //EXC_BAD_ACCESS 野指针，对象已经被回收或非法内存地址
+        //[ns6 retain];
+//        [ns6 retain];
+//        rc =[ns6 retainCount];
+//        NSLog(@"ns6 引用计数器  %d" , rc);
     }
-    return UIApplicationMain(argc, argv, nil, appDelegateClassName);
+    //return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }
 
 

@@ -32,7 +32,7 @@
 @property NSString *name,*idno,*sex;
 @property int age;
 @property float height;
-@property NsPerson *sNsPerson;
+@property(atomic,nonatomic,assign,retain,readonly,readwrite) NsPerson *sNsPerson;
 //- (void)setAge:(int)age;
 //- (void)setHeight:(float)height;
 //- (int)age;
@@ -67,5 +67,7 @@
 - (instancetype) initWithAll:(NSString *)name
                             :(int)age
                             :(float)height;
+
+- (void)dealloc;
 @end
 
