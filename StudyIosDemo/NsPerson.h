@@ -32,7 +32,8 @@
 @property NSString *name,*idno,*sex;
 @property int age;
 @property float height;
-@property(atomic,nonatomic,assign,retain,readonly,readwrite) NsPerson *sNsPerson;
+//(atomic,nonatomic,assign,retain,readonly,readwrite)
+@property NsPerson *sNsPerson;
 //- (void)setAge:(int)age;
 //- (void)setHeight:(float)height;
 //- (int)age;
