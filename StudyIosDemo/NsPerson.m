@@ -128,8 +128,9 @@
     return self;
 }
 
-//- (void)dealloc{
-//    NSLog(@"对象回收");
-//    [super dealloc];
-//}
+- (void)dealloc{
+    NSLog(@"NsPerson回收");
+    //MRC下可以使用
+    //[super dealloc];
+}
 @end

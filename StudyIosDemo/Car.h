@@ -17,8 +17,23 @@ NS_ASSUME_NONNULL_BEGIN
 //2）． @class 并不会拷贝任何内容，只是告诉编译器，这是1个类，这样编译器在编译的时候才可以知道这是1个类.
 
 @interface Car : NSObject
-//
-@property(atomic,assign,readwrite,getter=snsPerson,setter=setSnsPerson:) NsPerson *snsPerson;
+//3. retain:
+//只能用在MRC的模式下.代表生成的setter方法是标准的内存管理代码，
+//当属性的类型是OC对象的时候.绝大多数情况下使用retain.只有在出现了循环引用的时候1边retain 1边assign
+//4. assign:
+//在ARC和MRC的模式下都可以使用assign.
+//当属性的类型是非OC对象的时候 使用assign
+//5. strong:
+//只能使用在ARC机制下，当属性的类型是OC对象类型的时候，绝大多数情况下使用strong］只有出现了循环引用的时候，1端strong 1端weak
+//6. weak:
+//只能使用在ARC机制下，当属性的类型是OC对象的时候，只有出现了循环引用的时候，1端strong 1端weak
+@property(nonatomic,strong) NsPerson *strongPerson;
+
+@property(nonatomic,weak) NsPerson *weakPerson;
+
+- (void)dealloc;
+
+- (void)run;
 
 @end
 

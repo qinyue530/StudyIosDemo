@@ -8,5 +8,12 @@
 #import "Car.h"
 
 @implementation Car
+- (void)dealloc
+{
+    NSLog(@"资源释放 %p" , self);
+}
 
+- (void)run{
+    NSLog(@"车跑了");
+}
 @end

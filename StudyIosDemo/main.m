@@ -267,10 +267,30 @@ int main(int argc, char * argv[]) {
 //        [ns6 retain];
 //        rc =[ns6 retainCount];
 //        NSLog(@"ns6 引用计数器  %d" , rc);
-        Car* car = [Car new];
-        [car setSnsPerson:nsPerson];
+        //强指针，默认就是强指针可不写 强指针赋值为 nil 时 对象被立即回收
+        __strong Car* carStrong = [Car new];
+        //弱指针 与强指针作用相同，区别在于ARC模式下 如果1个对象没有任何强类型的指针指向这个对象的时候，对象就会被立即自动释放
+        __weak Car* carWeak = [Car new];
+        carStrong = nil;
+        __weak Car* pointCarStrong = carStrong;
+        [carStrong run];
+        //3），在ARC机制下，当对象被回收的时候，原来指向这个对象的弱指针会被自动设置为nil
+        //不会报错
+        [pointCarStrong run];
         //对象存储到当前自动释放池
-        //[car autorelease];
+        //[carStrong autorelease];
+        NSLog(@"============循环引用 - 强指针===================");
+        NsPerson* strongPerson = [NsPerson new];
+        Car* strongCar = [Car new];
+        strongPerson.strongCar = strongCar;
+        strongCar.strongPerson = strongPerson;
+        NSLog(@"============循环引用 - 弱指针===================");
+        NsPerson* weakPerson = [NsPerson new];
+        Car* weakCar = [Car new];
+        weakPerson.weakCar = weakCar;
+        weakCar.weakPerson = weakPerson;
+        
+        NSLog(@"============结束===================");
         
     }
     //return UIApplicationMain(argc, argv, nil, appDelegateClassName);

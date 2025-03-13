@@ -56,6 +56,13 @@
 @property(atomic,assign,readwrite,getter=getSnsPerson,setter=snsPerson:) NsPerson *sNsPerson;
 
 @property(atomic,assign,readwrite,getter=getCar,setter=car:) Car *car;
+//生成的私有属性为强指针，默认为strong
+//5．ARC机制下，我们关注的重点。
+//当1个类的属性是1个0C对象的时候。绝大多数场景这个属性应该声明为强类型。
+// strong和weak都是应用在属性的类型是OC对象的时候. 不是OC对象的时候。使用assign。
+@property(nonatomic,strong) Car* strongCar;
+//生成的私有属性为弱指针
+@property(nonatomic,weak) Car* weakCar;
 //- (void)setAge:(int)age;
 //- (void)setHeight:(float)height;
 //- (int)age;
@@ -91,6 +98,6 @@
                             :(int)age
                             :(float)height;
 
-//- (void)dealloc;
+- (void)dealloc;
 @end
 
