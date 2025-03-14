@@ -11,6 +11,9 @@
 #import "Student.h"
 #import "Teacher.h"
 #import "Student+StudentBag.h"
+#import "Teacher+TeacherBag.h"
+// Objective-C 没有方法的重载
+
 /**
  .h     头文件     写类声明
  ,m    实现文件    写类的实现
@@ -35,6 +38,10 @@ void test(void){
 int main(int argc, char * argv[]) {
     NSString * appDelegateClassName;
     @autoreleasepool {
+        //typedef 基本数据类型关键字重命名
+        typedef unsigned long long int bigInt;
+        unsigned long long int a = 123;
+        bigInt b = 123;
         // Setup code that might create autoreleased objects goes here.
         NSLog(@"Hello World!");
         //C指针用NULL int *i = NULL; 不指向内存中的空间
@@ -294,7 +301,28 @@ int main(int argc, char * argv[]) {
         NSLog(@"============结束===================");
         
         [ss hehe];
-        
+        //延展
+        tea1.bag = @"yanZhanTest";
+        int num1 = 123;
+        int num2 = 234;
+        typedef void (^block1)();
+        block1 ablock;
+        void (^myBlock1)()= ^void(){
+            NSLog(@"block");
+        };
+        typedef int (^block2)();
+        block2 bblock;
+        int (^myBlock2)()= ^int(){
+            return 1;
+        };
+        typedef int (^block3)(int num1 , int num2);
+        block3 cblock;
+        int (^myBlock3)(int num1 , int num2) = ^int(int num1,int num2){
+            return num1+num2;
+        };
+        myBlock1();
+        myBlock2();
+        myBlock3(num1,num2);
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
 }

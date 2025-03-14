@@ -44,6 +44,7 @@
 		60F914622D812AEE006FAE46 /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 		60F914672D83BE61006FAE46 /* Student+StudentBag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Student+StudentBag.h"; sourceTree = "<group>"; };
 		60F914682D83BE61006FAE46 /* Student+StudentBag.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Student+StudentBag.m"; sourceTree = "<group>"; };
+		60F9146A2D83C8F0006FAE46 /* Teacher+TeacherBag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Teacher+TeacherBag.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 				60F914622D812AEE006FAE46 /* Car.m */,
 				60F914672D83BE61006FAE46 /* Student+StudentBag.h */,
 				60F914682D83BE61006FAE46 /* Student+StudentBag.m */,
+				60F9146A2D83C8F0006FAE46 /* Teacher+TeacherBag.h */,
 			);
 			path = StudyIosDemo;
 			sourceTree = "<group>";

@@ -7,6 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "Teacher.h"
 #import "NsPerson.h"
+#import "Teacher+TeacherBag.h"
 @implementation Teacher
 - (void)run {
     //方法中使用对象属性

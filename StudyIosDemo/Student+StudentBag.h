@@ -6,7 +6,7 @@
 //
 
 #import "Student.h"
-
+//新建 OC文件 选择 Category延展
 NS_ASSUME_NONNULL_BEGIN
 //使用分类注意的几个地方：
 //1. 分类只能增加方法，不能增加属性
