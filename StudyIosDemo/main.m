@@ -10,6 +10,7 @@
 #import "NsPerson.h"
 #import "Student.h"
 #import "Teacher.h"
+#import "Student+StudentBag.h"
 /**
  .h     头文件     写类声明
  ,m    实现文件    写类的实现
@@ -292,8 +293,10 @@ int main(int argc, char * argv[]) {
         
         NSLog(@"============结束===================");
         
+        [ss hehe];
+        
     }
-    //return UIApplicationMain(argc, argv, nil, appDelegateClassName);
+    //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
 }
 
 

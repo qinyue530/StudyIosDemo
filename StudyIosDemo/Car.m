@@ -10,7 +10,7 @@
 @implementation Car
 - (void)dealloc
 {
-    NSLog(@"资源释放 %p" , self);
+//    NSLog(@"资源释放 %p" , self);
 }
 
 - (void)run{

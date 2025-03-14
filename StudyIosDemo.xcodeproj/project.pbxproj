@@ -18,6 +18,7 @@
 		6090E8DB2D5DCD5000348316 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090E8DA2D5DCD5000348316 /* Student.m */; };
 		60DC599A2D792A380037A90C /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DC59992D792A380037A90C /* Teacher.m */; };
 		60F914632D812AEE006FAE46 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F914622D812AEE006FAE46 /* Car.m */; };
+		60F914692D83BE61006FAE46 /* Student+StudentBag.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F914682D83BE61006FAE46 /* Student+StudentBag.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		60DC59992D792A380037A90C /* Teacher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		60F914612D812AEE006FAE46 /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
 		60F914622D812AEE006FAE46 /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		60F914672D83BE61006FAE46 /* Student+StudentBag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Student+StudentBag.h"; sourceTree = "<group>"; };
+		60F914682D83BE61006FAE46 /* Student+StudentBag.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Student+StudentBag.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				60DC59992D792A380037A90C /* Teacher.m */,
 				60F914612D812AEE006FAE46 /* Car.h */,
 				60F914622D812AEE006FAE46 /* Car.m */,
+				60F914672D83BE61006FAE46 /* Student+StudentBag.h */,
+				60F914682D83BE61006FAE46 /* Student+StudentBag.m */,
 			);
 			path = StudyIosDemo;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60F914692D83BE61006FAE46 /* Student+StudentBag.m in Sources */,
 				602F3BF52D5C932F0040C01D /* ViewController.m in Sources */,
 				60DC599A2D792A380037A90C /* Teacher.m in Sources */,
 				6090E8D82D5DC73E00348316 /* NsPerson.m in Sources */,

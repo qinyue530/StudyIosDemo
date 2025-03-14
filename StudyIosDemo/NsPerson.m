@@ -129,7 +129,7 @@
 }
 
 - (void)dealloc{
-    NSLog(@"NsPerson回收");
+//    NSLog(@"NsPerson回收");
     //MRC下可以使用
     [super dealloc];
 }
