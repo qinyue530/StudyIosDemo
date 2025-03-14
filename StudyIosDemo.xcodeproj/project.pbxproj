@@ -14,9 +14,10 @@
 		602F3BFA2D5C93300040C01D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BF92D5C93300040C01D /* Assets.xcassets */; };
 		602F3BFD2D5C93300040C01D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BFC2D5C93300040C01D /* Base */; };
 		602F3C002D5C93300040C01D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 602F3BFF2D5C93300040C01D /* main.m */; };
-		6090E8D82D5DC73E00348316 /* NsPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090E8D72D5DC73E00348316 /* NsPerson.m */; };
+		6090E8D82D5DC73E00348316 /* NsPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090E8D72D5DC73E00348316 /* NsPerson.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6090E8DB2D5DCD5000348316 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090E8DA2D5DCD5000348316 /* Student.m */; };
 		60DC599A2D792A380037A90C /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DC59992D792A380037A90C /* Teacher.m */; };
+		60F914632D812AEE006FAE46 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F914622D812AEE006FAE46 /* Car.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		6090E8DA2D5DCD5000348316 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		60DC59982D792A380037A90C /* Teacher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
 		60DC59992D792A380037A90C /* Teacher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
+		60F914612D812AEE006FAE46 /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		60F914622D812AEE006FAE46 /* Car.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 				6090E8DA2D5DCD5000348316 /* Student.m */,
 				60DC59982D792A380037A90C /* Teacher.h */,
 				60DC59992D792A380037A90C /* Teacher.m */,
+				60F914612D812AEE006FAE46 /* Car.h */,
+				60F914622D812AEE006FAE46 /* Car.m */,
 			);
 			path = StudyIosDemo;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				602F3BEF2D5C932F0040C01D /* AppDelegate.m in Sources */,
 				602F3C002D5C93300040C01D /* main.m in Sources */,
 				602F3BF22D5C932F0040C01D /* SceneDelegate.m in Sources */,
+				60F914632D812AEE006FAE46 /* Car.m in Sources */,
 				6090E8DB2D5DCD5000348316 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
