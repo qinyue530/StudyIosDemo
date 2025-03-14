@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 //4.分类中可以存在和本类同名方法的.
 //当分类中有和本类中同名的方法的时候，优先调用分类的方法。哪怕没有引入分类的头文件。
 //如果多个分类中有相同的方法，优先调用最后编译的分类，
+
+
+//非正式协议： 为系统的类写一个分类 如为 NSObject 写一个分类
 @interface Student (StudentBag)
 - (void)hehe;
 @end
