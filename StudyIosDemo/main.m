@@ -33,7 +33,12 @@ void test(void){
     NSLog(@"test==============");
     NSLog(@"test==============");
 }
+void blockMethod(void (^block)()){
+    NSLog(@"blockMethod");
+    block();
+}
 
+int num = 0;
 #pragma mark - main方法
 int main(int argc, char * argv[]) {
     NSString * appDelegateClassName;
@@ -304,11 +309,15 @@ int main(int argc, char * argv[]) {
         //延展
         tea1.bag = @"yanZhanTest";
         int num1 = 123;
-        int num2 = 234;
+        //block 内部可以取定义在外部的值，可以修改全局变量的值但是不能修改定义在外部的局部变量值
+        //如果需要修改 要在外部的局部变量定义时前方增加 __block
+        __block int num2 = 234;
         typedef void (^block1)();
         block1 ablock;
         void (^myBlock1)()= ^void(){
-            NSLog(@"block");
+            num2++;
+            num++;
+            NSLog(@"block-------%d-------%d---------%d",num,num1,num2);
         };
         typedef int (^block2)();
         block2 bblock;
@@ -323,6 +332,9 @@ int main(int argc, char * argv[]) {
         myBlock1();
         myBlock2();
         myBlock3(num1,num2);
+        blockMethod(^{
+            myBlock1();
+        });
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
 }
