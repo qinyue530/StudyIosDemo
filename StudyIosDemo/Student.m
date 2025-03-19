@@ -83,4 +83,14 @@
     s1.height = _height;
     return s1;
 }
+
+- (void)lookBook{
+    NSLog(@"Student look book");
+}
+- (void)doHomeWork{
+    NSLog(@"Student pen doHomeWork");
+}
+- (void)doHomeWork:(NSString*) bookName{
+    NSLog(@"Student pen doHomeWork 重载 %@",bookName);
+}
 @end

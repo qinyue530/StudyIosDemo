@@ -335,6 +335,13 @@ int main(int argc, char * argv[]) {
         blockMethod(^{
             myBlock1();
         });
+        
+        [std lookBook];
+        //不实现协议的全部方法不会报错，调用时会报错
+        //[std writeBook];
+        //
+        [std doHomeWork];
+        [std doHomeWork:@"数学"];
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
 }

@@ -6,13 +6,16 @@
 //
 #import <Foundation/Foundation.h>
 #import "NsPerson.h"
+#import "Book.h"
+#import "Pen.h"
 #ifndef Student_h
 #define Student_h
 #endif /* Student_h */
 
 #pragma mark - Student声明
 //新建类
-@interface Student : NsPerson{
+//使用Book协议
+@interface Student : NsPerson<Book,Pen>{
 
 }
 
