@@ -17,4 +17,8 @@
 + (void)addMethodTest{
     NSLog(@"=======Teacher addMethodTest  =======");
 }
+
+- (void) lookBook{
+    NSLog(@"=======Teacher lookBook  =======");
+}
 @end

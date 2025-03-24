@@ -351,6 +351,16 @@ int main(int argc, char * argv[]) {
         [std doHomeWork];
         [std doHomeWork:@"数学"];
         
+        [tea1 lookBook];
+        
+        //根据是否遵循某个协议 创建类，如果没有遵循会报错
+        NSObject<KeWen>* keWenNs = [Teacher new];
+        //NSObject<KeWen>* keWenStu = [Student new];
+        id<KeWen> keWenId = [Teacher new];
+        
+        NSObject<Book,Pen>* bpNs = [Student new];
+        id<Book,Pen> bpId = [Student new];
+        
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
 }

@@ -47,6 +47,7 @@
 		60F9146A2D83C8F0006FAE46 /* Teacher+TeacherBag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Teacher+TeacherBag.h"; sourceTree = "<group>"; };
 		60F9146B2D8A6487006FAE46 /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		60F9146C2D8A68F2006FAE46 /* Pen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pen.h; sourceTree = "<group>"; };
+		60F9146D2D91014F006FAE46 /* KeWen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeWen.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 				60F9146A2D83C8F0006FAE46 /* Teacher+TeacherBag.h */,
 				60F9146B2D8A6487006FAE46 /* Book.h */,
 				60F9146C2D8A68F2006FAE46 /* Pen.h */,
+				60F9146D2D91014F006FAE46 /* KeWen.h */,
 			);
 			path = StudyIosDemo;
 			sourceTree = "<group>";
