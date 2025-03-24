@@ -33,11 +33,18 @@ void test(void){
     NSLog(@"test==============");
     NSLog(@"test==============");
 }
-void blockMethod(void (^block)()){
-    NSLog(@"blockMethod");
+//block作为函数入参
+void blockMethod(void (^block)(),int num){
+    NSLog(@"blockMethod----------%d",num);
     block();
 }
-
+//block作为函数返回值
+typedef void (^MyBlock)();
+MyBlock myBlockTest(void (^block)(),int num){
+    NSLog(@"myBlockTest----------%d",num);
+    block();
+    return block;
+}
 int num = 0;
 #pragma mark - main方法
 int main(int argc, char * argv[]) {
@@ -334,14 +341,16 @@ int main(int argc, char * argv[]) {
         myBlock3(num1,num2);
         blockMethod(^{
             myBlock1();
-        });
+        },1);
         
+        MyBlock mybl = myBlockTest(myBlock1, 1);
         [std lookBook];
         //不实现协议的全部方法不会报错，调用时会报错
         //[std writeBook];
         //
         [std doHomeWork];
         [std doHomeWork:@"数学"];
+        
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
 }
