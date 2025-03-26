@@ -434,6 +434,89 @@ int main(int argc, char * argv[]) {
         urlStr = [NSString stringWithContentsOfURL:ul1 encoding:NSUTF8StringEncoding error:&err];
         NSLog(@"%@",urlStr);
         #pragma mark - 读取写入文件 end
+        //字符串比较
+        //options:NSCaseInsensitiveSearch 忽略大小写。
+        //NSLiteralSearch 完全匹配 默认
+        //NSNumericSearch 字符串相同格式，比较数字
+        NSComparisonResult nsr = [str1=@"a101" compare:str2=@"a100" options:NSCaseInsensitiveSearch];
+        switch (nsr) {
+            case NSOrderedAscending:
+                NSLog(@"str1 < str2");
+                break;
+            case NSOrderedSame:
+                NSLog(@"str1 = str2");
+                break;
+            case NSOrderedDescending:
+                NSLog(@"str1 > str2");
+                break;
+            default:
+                NSLog(@"I don't know.");
+                break;
+        }
+        //字符串开始和结束判断
+        NSString *beStr = @"https://www.baidu.com/";
+        //字符串开头判断
+        res = [beStr hasPrefix:@"http"];
+        LogBOOL(res);
+        //字符串结尾判断
+        res = [beStr hasSuffix:@"com/"];
+        LogBOOL(res);
+        //字符串匹配，range.length = 0 或 range.location = NSNotFound 则为没有找到，找到则为字符串长度
+        //range.location 为首次匹配到的字符串下标
+        //结构体
+        //typedef struct _NSRange {
+        //    NSUInteger location;
+        //    NSUInteger length;
+        //} NSRange;
+        NSRange range = [beStr rangeOfString:@"bai"];
+        NSLog(@"%lu ------ %lu",range.length ,range.location);
+        //初始化结构体,格式化为NSString
+        NSRange nsrange1 ={5,5};
+        NSRange nsrange2 =NSMakeRange(4, 4);
+        NSLog(@"%@",NSStringFromRange(nsrange1));
+        //字符串截取
+        //从指定的下标截取到最后
+        NSString *strSub = [beStr substringFromIndex:3];
+        NSLog(@"%@",strSub);
+        //从前开始截取到下标
+        strSub = [beStr substringToIndex:3];
+        NSLog(@"%@",strSub);
+        //指定范围截取
+        strSub = [beStr substringWithRange:NSMakeRange(3, 5)];
+        NSLog(@"%@",strSub);
+        //字符串替换,匹配多个会全部替换
+        beStr = [beStr stringByReplacingOccurrencesOfString:@"." withString:@"@@"];
+        NSLog(@"%@",beStr);
+        //类型转换 从头开始转换，遇到不能转换了则停止
+        beStr = @"1111asaf2";
+        int beInt = beStr.intValue;
+        NSInteger beInteger = beStr.integerValue;
+        long long beLong = beStr.longLongValue;
+        BOOL beBool = beStr.boolValue;
+        NSLog(@"%d",beInt);
+        beStr = @"123.23";
+        double beDouble = beStr.doubleValue;
+        beStr = @"123.23f";
+        float beFloat = beStr.floatValue;
+        beStr = @"    https://www.baidu.com/     ";
+        NSLog(@"%@",beStr);
+        //去掉字符串前后的
+        //whitespaceCharacterSet 空格
+        //lowercaseLetterCharacterSet 小写字母
+        //uppercaseLetterCharacterSet 大写字母
+        //characterSetWithCharactersInString:@" " 指定字符串
+        beStr = [beStr stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
+        NSLog(@"%@",beStr);
+        //字符串转大写
+        beStr = [beStr uppercaseString];
+        NSLog(@"%@",beStr);
+        //字符串转小写
+        beStr = [beStr lowercaseString];
+        NSLog(@"%@",beStr);
+        
+    
+        
+        
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
 }
