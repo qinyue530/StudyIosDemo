@@ -28,6 +28,8 @@
  
  */
 #pragma mark - 方法
+//定义宏
+#define LogBOOL(var) NSLog(@"%@",var==YES?@"YES":@"NO")
 void test(void){
     NSLog(@"test==============");
     NSLog(@"test==============");
@@ -361,6 +363,77 @@ int main(int argc, char * argv[]) {
         NSObject<Book,Pen>* bpNs = [Student new];
         id<Book,Pen> bpId = [Student new];
         
+        NSString* str1 = @"a";
+        NSString* str2 = @"a";
+        NSString* str3 = [NSString stringWithFormat:@"a"];
+        int index = 5;
+        //字符串常用的方法
+        //字符串格式化拼接
+        NSString* withResult = [NSString stringWithFormat:@"====%@====%@====%d",str1,str2,123];
+        //字符串长度
+        NSInteger resultLength = withResult.length;
+        //获取指定位置的字符
+        unichar ch = [withResult characterAtIndex:index];
+        //C语言字符串转为OC
+        NSString *nsstr1 = [NSString stringWithUTF8String:str0];
+        //OC语言字符串转为C
+        const char *nsstr2 = nsstr1.UTF8String;
+        NSLog(@"字符串：%@",withResult);
+        NSLog(@"字符串长度：%ld",resultLength);
+        NSLog(@"字符串第%d个字符为：%C",index,ch);
+        //两个字符串内容是否相当   == 作用两边数据是否相同，&str1 == &str2 是变量地址的值
+        // 0 - false  , 1 - true
+        NSLog(@"str1 = %@ , str2 = %@ ,str2==str1 = %d  , &str1 == &str2 = %d",str1 , str2 , str1 == str2 , &str1 == &str2);
+        NSLog(@"str1 = %@ , str3 = %@ ,str3==str1 = %d  , &str1 == &str3 = %d",str1 , str3 , str1 == str3 , &str1 == &str3);
+        //比较字符串内容
+        BOOL equal1 = [str1 isEqualToString:str3];
+        BOOL equal2 = [str1 isEqualToString:str2];
+        NSLog(@"%d-----%d",equal1,equal2);
+        #pragma mark - 读取写入文件 start
+        //将字符串的内容写入到文件中
+        //writeToFile:文件路径
+        //atomically:YES:先写到临时文件中，安全效率低 NO:直接写入到文件 不安全效率高
+        //encoding: 编码
+        //error: 二级指针 要传递1个NSError地址，写入成功为nil，写入失败就会指向错误对象
+        //返回值为BOOL类型，代表是否写入成功 ， err == nil 也可判断为写入成功
+        NSError *err;
+        BOOL res = [str1 writeToFile:@"/Users/qinyue/writeToFile.txt" atomically:NO encoding:NSUTF8StringEncoding error:&err];
+        if(res || err == nil){
+            NSLog(@"写入成功");
+        }else{
+            NSLog(@"写入失败:%@",err);
+            //简要信息
+            NSLog(@"写入失败:%@",err.localizedDescription);
+        }
+        //从磁盘上的文件读取字符串
+        NSString *strFile = [NSString stringWithContentsOfFile:@"/Users/qinyue/writeToFile.txt" encoding:NSUTF8StringEncoding error:&err];
+        if(err == nil){
+            NSLog(@"读取成功 : %@" , strFile);
+        }else{
+            NSLog(@"读取失败:%@",err);
+            //简要信息
+            NSLog(@"读取失败:%@",err.localizedDescription);
+        }
+        //使用NSURL 读取文件和网友
+        NSURL *ul1 = [NSURL URLWithString:@"https://www.baidu.com/"];
+        //读取网页
+        NSString *urlStr = [NSString stringWithContentsOfURL:ul1 encoding:NSUTF8StringEncoding error:&err];
+        NSLog(@"%@",urlStr);
+        
+        ul1 = [NSURL URLWithString:@"file:///Users/qinyue/URLWithString.txt"];
+        //写入文件
+        res = [str1 writeToURL:ul1 atomically:NO encoding:NSUTF8StringEncoding error:&err];
+        if(res || err == nil){
+            NSLog(@"写入成功");
+        }else{
+            NSLog(@"写入失败:%@",err);
+            //简要信息
+            NSLog(@"写入失败:%@",err.localizedDescription);
+        }
+        //读取文件
+        urlStr = [NSString stringWithContentsOfURL:ul1 encoding:NSUTF8StringEncoding error:&err];
+        NSLog(@"%@",urlStr);
+        #pragma mark - 读取写入文件 end
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
 }
