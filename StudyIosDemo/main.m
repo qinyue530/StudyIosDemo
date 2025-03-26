@@ -607,6 +607,57 @@ int main(int argc, char * argv[]) {
         NSNumber *number1 = [NSNumber numberWithInt:10];
         NSNumber *number2 = @10;
         NSArray *numArr = @[number1,number2,@10];
+        
+        //NSDictionary和NSMutableDictionary 类似Java中的Map
+        //创建NSDictionary
+        //以下三种没有任何数组，没有任何意义。不能动态新增和删除
+        NSDictionary *dic = [NSDictionary new];
+        dic = [NSDictionary dictionary];
+        dic = [[NSDictionary alloc] init];
+        //创建 value1,key1,value1,key1,nul
+        dic = [NSDictionary dictionaryWithObjectsAndKeys:@"aaa",@"name",@"bbb",@"addres",@"ccc",@"code",nil];
+        NSLog(@"%@",dic);
+        //简写
+        //key不允许重复，后加的无效
+        dic = @{@"name":@"aaa",@"address":@"yingkou",@"code":@"1111",@"name":@"bbb"};
+        //顺序按照ASCII值顺序打印
+        //实际并不是按照顺序存储，是根据key和数组长度通过哈希算法，计算出下标 并存在下标位置，取值时也是这样计算
+        NSLog(@"%@",dic);
+        //取出指定key的值 如果不存在返回为nil 不报错，
+        //dic.count 有多少个key
+        NSLog(@"%@--%@--%@--%@--%lu",dic[@"name"],dic[@"aaa"],[dic objectForKey:@"name"],[dic objectForKey:@"aaa"],dic.count);
+        //遍历
+        //遍历出的是key，在通过key取出value
+        for(id item in dic){
+            NSLog(@"%@:%@",item,dic[item]);
+        }
+        //block方法遍历
+        [dic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+            NSLog(@"block遍历 -- %@:%@",key,obj);
+        }];
+        //NSMutableDictionary 可以动态新增和删除
+        //创建
+        NSMutableDictionary *nmDic = [NSMutableDictionary new];
+        nmDic = [[NSMutableDictionary alloc] init];
+        nmDic = [NSMutableDictionary dictionary];
+        nmDic = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"aaa",@"name",@"bbb",@"addres",@"ccc",@"code",nil];
+        //这样不行，@{@"name":@"aaa",@"address":@"yingkou",@"code":@"1111",@"name":@"bbb"}; 为NSDictionary，不能动态新增删除
+        //nmDic = @{@"name":@"aaa",@"address":@"yingkou",@"code":@"1111",@"name":@"bbb"};
+        //新增
+        //如果重复key，会被替换为后添加的
+        [nmDic setObject:@"yyy" forKey:@"qqq"];
+        [nmDic setObject:@"sss" forKey:@"name"];
+        //删除
+        //删除指定key
+        [nmDic removeObjectForKey:@"name"];
+        NSLog(@"%@",nmDic);
+        //写入到文件
+        res = [nmDic writeToFile:@"/Users/qinyue/writeToFileNSMutableDictionary.plist" atomically:NO];
+        //读取文件
+        NSDictionary *fileDic = [NSDictionary dictionaryWithContentsOfFile:@"/Users/qinyue/writeToFileNSMutableDictionary.plist"];
+        NSLog(@"读取文件中的NSDictionary===%@",fileDic);
+        //删除所有
+        [nmDic removeAllObjects];
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
 }
