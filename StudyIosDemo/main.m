@@ -513,9 +513,15 @@ int main(int argc, char * argv[]) {
         //字符串转小写
         beStr = [beStr lowercaseString];
         NSLog(@"%@",beStr);
-        
-    
-        
+        //NSMutableString 可修改，不会新创建对象。
+        //初始化不能直接 NSMutableString *nsmstr = @"asd";
+        //使用NSString 的地方可以使用 NSMutableString 。反之不行
+        NSMutableString *nsmstr = [NSMutableString string];
+        [nsmstr appendString:@"aaa"];
+        [nsmstr appendString:@"bbb"];
+        NSLog(@"%@",nsmstr);
+        [nsmstr appendFormat:@"ccc%@eee",@"ddd"];
+        NSLog(@"%@",nsmstr);
         
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
