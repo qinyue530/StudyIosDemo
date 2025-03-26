@@ -522,7 +522,91 @@ int main(int argc, char * argv[]) {
         NSLog(@"%@",nsmstr);
         [nsmstr appendFormat:@"ccc%@eee",@"ddd"];
         NSLog(@"%@",nsmstr);
-        
+        //NSArray  只能存OC对象，不能非OC对象，不能存储基本数据类型，结尾要加nil，表示元素到此结束
+        //这样创建长度为0个
+        //NSArray *arr1 = [NSArray new];
+        //NSArray *arr2 = [[NSArray alloc] init];
+        NSArray *arr1 = [NSArray arrayWithObjects:@"aaa",@"bbb",@"ccc",st4,nil];
+        NSLog(@"%@",arr1);
+        //这种不需要加nil
+        NSArray *arr2 = @[@"zzz",@"xxx",@"nnn"];
+        NSLog(@"%@",arr2);
+        //取出指定下标的元素
+        NSString *arrget = [arr1 objectAtIndex:1];
+        //数组里是否有某个元素
+        res = [arr1 containsObject:@"aaa"];
+        //取数组的第一个元素 , 当数组中没有任何元素，[arr1 objectAtIndex:0] 会报错，arr1.firstObject不会报错取到nil
+        NSString *arrgetbegin = arr1.firstObject;
+        //取最后一个元素
+        NSString *arrgetend = arr1.lastObject;
+        //指定元素第一次出现的下标,如果没有找到则为NSUInteger的最大值 NSNotFound
+        NSUInteger arrIndex = [arr1 indexOfObject:@"bbb"];
+        NSLog(@"arr1长度：%lu-%@-数组中是否有aaa:%d--%@--%@--%ld",arr1.count,arrget,res,arrgetbegin,arrgetend,arrIndex);
+        //NSArray 遍历
+        NSLog(@"普通for循环");
+        for(int i = 0 ; i< arr1.count ; i++){
+            NSLog(@"%@",[arr1 objectAtIndex:i]);
+        }
+        //存储类型不一致时，建议使用id
+        NSLog(@"增强for循环");
+        for(id ss in arr1){
+            NSLog(@"%@",ss);
+        }
+        //遍历数组中的每一个元素
+        NSLog(@"使用block循环");
+        [arr1 enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSLog(@"%@-----%ld",obj,idx);
+            //*stop=YES时，循环结束
+            if(idx == 2){
+                *stop = YES;
+            }
+        }];
+        //将数组中的元素连接起来，组成新的字符串，“#”为连接符
+        NSString *arrStr = [arr1 componentsJoinedByString:@"#"];
+        NSLog(@"%@",arrStr);
+        //字符串转NSArray
+        arr1 = [arrStr componentsSeparatedByString:@"<"];
+        for(id ss in arr1){
+            NSLog(@"%@",ss);
+        }
+        //NSMutableArray 可以动态删除和新增，其他与NSArray 一致
+        NSLog(@"NSMutableArray 的使用");
+        NSMutableArray *nsArr = [NSMutableArray new];
+        nsArr = [[NSMutableArray alloc] init];
+        nsArr = [NSMutableArray array];
+        nsArr = [NSMutableArray arrayWithObjects:@"aaa",@"bbb",@"ccc", nil];
+        //不可以这样定义 nsArr = @[@"aaa",@"bbb",@"ccc"]; 因为后面是 NSArray的定义方式
+        NSLog(@"NSMutableArray 增加元素");
+        //增加数组
+        [nsArr addObject:@"aaa"];
+        [nsArr addObject:@"eee"];
+        [nsArr addObject:arr2];
+        //将arr2数组中的每一个元素，取出来增加到nsArr中
+        [nsArr addObjectsFromArray:arr2];
+        //将元素插入指定下标位置
+        [nsArr insertObject:@"kkk" atIndex:2];
+        [nsArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSLog(@"%@-----%ld",obj,idx);
+        }];
+        NSLog(@"NSMutableArray 删除元素");
+        //删除数组
+        //删除指定下标的元素
+        [nsArr removeObjectAtIndex:2];
+        //删除值为指定值的元素,如果有多个相同的则全部删除
+        [nsArr removeObject:arr2];
+        [nsArr removeObject:@"aaa"];
+        //删除指定范围当值的 指定元素
+        [nsArr removeObject:@"bbb" inRange:NSMakeRange(0, 4)];
+        //删除最后一个元素
+        [nsArr removeLastObject];
+        //删除所有元素
+        [nsArr removeAllObjects];
+        [nsArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSLog(@"%@-----%ld",obj,idx);
+        }];
+        NSNumber *number1 = [NSNumber numberWithInt:10];
+        NSNumber *number2 = @10;
+        NSArray *numArr = @[number1,number2,@10];
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
 }
