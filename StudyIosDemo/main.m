@@ -59,10 +59,10 @@ int main(int argc, char * argv[]) {
         // Setup code that might create autoreleased objects goes here.
         NSLog(@"Hello World!");
         //C指针用NULL int *i = NULL; 不指向内存中的空间
-        /*OC的类指针使用nil  
-        NsPerson *p = nil;   不指向任何对象
-        那么这个时候 如果通过p1指针去访问p1指针指向的对象的属性
-        这个时候会运行报错，那么这个时候，如果通过p1指针去调用对象的方法 运行不会报错 但是方法不会执行，没有任何反应
+        /*OC的类指针使用nil
+         NsPerson *p = nil;   不指向任何对象
+         那么这个时候 如果通过p1指针去访问p1指针指向的对象的属性
+         这个时候会运行报错，那么这个时候，如果通过p1指针去调用对象的方法 运行不会报错 但是方法不会执行，没有任何反应
          */
         if(NULL == nil){
             NSLog(@"%@ ========= %@" , NULL,nil);
@@ -130,7 +130,7 @@ int main(int argc, char * argv[]) {
         } @finally {
             NSLog(@"@finally");
         }
-    
+        
         //类方法调用
         [Student leiFangFa];
         Student *ss = [Student student:@"qinyue":222:22.33f];
@@ -277,18 +277,18 @@ int main(int argc, char * argv[]) {
         NSLog(@"自定义构造方法 %@------%d------%f" , ns7.name,ns7.age,ns7.height);
         //ARC模式 使用
         //引用计数器
-//        int rc =[ns6 retainCount];
-//        NSLog(@"ns6 引用计数器  %d" , rc);
+        //        int rc =[ns6 retainCount];
+        //        NSLog(@"ns6 引用计数器  %d" , rc);
         //引用加1
-//        [ns6 retain];
+        //        [ns6 retain];
         //引用减1 为0时回收
-//        [ns6 release];
-//        [ns6 release];
+        //        [ns6 release];
+        //        [ns6 release];
         //EXC_BAD_ACCESS 野指针，对象已经被回收或非法内存地址
         //[ns6 retain];
-//        [ns6 retain];
-//        rc =[ns6 retainCount];
-//        NSLog(@"ns6 引用计数器  %d" , rc);
+        //        [ns6 retain];
+        //        rc =[ns6 retainCount];
+        //        NSLog(@"ns6 引用计数器  %d" , rc);
         //强指针，默认就是强指针可不写 强指针赋值为 nil 时 对象被立即回收
         __strong Car* carStrong = [Car new];
         //弱指针 与强指针作用相同，区别在于ARC模式下 如果1个对象没有任何强类型的指针指向这个对象的时候，对象就会被立即自动释放
@@ -389,7 +389,7 @@ int main(int argc, char * argv[]) {
         BOOL equal1 = [str1 isEqualToString:str3];
         BOOL equal2 = [str1 isEqualToString:str2];
         NSLog(@"%d-----%d",equal1,equal2);
-        #pragma mark - 读取写入文件 start
+#pragma mark - 读取写入文件 start
         //将字符串的内容写入到文件中
         //writeToFile:文件路径
         //atomically:YES:先写到临时文件中，安全效率低 NO:直接写入到文件 不安全效率高
@@ -433,7 +433,7 @@ int main(int argc, char * argv[]) {
         //读取文件
         urlStr = [NSString stringWithContentsOfURL:ul1 encoding:NSUTF8StringEncoding error:&err];
         NSLog(@"%@",urlStr);
-        #pragma mark - 读取写入文件 end
+#pragma mark - 读取写入文件 end
         //字符串比较
         //options:NSCaseInsensitiveSearch 忽略大小写。
         //NSLiteralSearch 完全匹配 默认
@@ -717,7 +717,43 @@ int main(int argc, char * argv[]) {
         NSLog(@"%@",nsArr);
         
         //日期
+        NSDate *date = [NSDate new ];
+        NSLog(@"%@", date);
+        //日期格式化
+        NSDateFormatter *df = [NSDateFormatter new];
+        df.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+        //NSDate 转 NSString
+        NSString *daStr = [df stringFromDate:date];
+        NSLog(@"%@", daStr);
+        //NSString 转 NSDate
+        date = [df dateFromString:daStr];
+        NSLog(@"%@", date);
+        //n秒以后的时间
+        date = [NSDate dateWithTimeIntervalSinceNow:5000];
+        NSLog(@"%@", date);
+        //计算两个时间的差
+        double time = [date timeIntervalSinceDate:[NSDate new]];
+        NSLog(@"%lf", time);
+        //
+        NSCalendar *nsc = [NSCalendar currentCalendar];
+        //NSCalendarUnitWeekday 是本周的第几天，周日为第一天
+        NSDateComponents *ndc =[nsc components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitWeekday fromDate:date];
+        NSLog(@"%lu------%lu------%lu-----%lu",ndc.year,ndc.month,ndc.day,ndc.weekday);
         
+        //字符串copy  copy的返回值是NSString对象
+        //产生新对象的叫做神拷贝，不生成新对象的是浅拷贝
+        NSString *strC1 = @"asd";
+        NSString *strC2 = [strC1 copy];
+        NSString *strC3 = strC1;
+        strC1 = @"sss";
+        NSLog(@"%@--%@--%@--%p--%p--%p" , strC1,strC2,strC3,&strC1,&strC2,&strC3);
+        //
+        NSMutableString *strmC1 = [NSMutableString string];
+        [strmC1 appendString:@"aaa"];
+        NSMutableString *strmC2 = [strmC1 mutableCopy];
+        NSMutableString *strmC3 = strmC1;
+        [strmC1 appendString:@"ccc"];
+        NSLog(@"%@--%@--%@--%p--%p--%p" , strmC1,strmC2,strmC3,&strmC1,&strmC2,&strmC3);
         
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
