@@ -93,4 +93,19 @@
 - (void)doHomeWork:(NSString*) bookName{
     NSLog(@"Student pen doHomeWork 重载 %@",bookName);
 }
+
+//单例模式
++(instancetype) allocWithZone:(struct _NSZone *)zone{
+    static id instance = nil;
+    if(instance == nil){
+        instance = [super allocWithZone: zone];
+    }
+    return instance;
+}
++(instancetype) shareStudent{
+    return [self new];
+}
++(instancetype) defaultStudent{
+    return [self new];
+}
 @end

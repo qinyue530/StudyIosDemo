@@ -754,6 +754,13 @@ int main(int argc, char * argv[]) {
         NSMutableString *strmC3 = strmC1;
         [strmC1 appendString:@"ccc"];
         NSLog(@"%@--%@--%@--%p--%p--%p" , strmC1,strmC2,strmC3,&strmC1,&strmC2,&strmC3);
+        Student *std1 = [Student new];
+        Student *std2 = [Student new];
+        Student *std3 = [Student new];
+        //非单例
+        NSLog(@"%p-----%p----%p",personA,n1,nsPerson);
+        //单例
+        NSLog(@"%p-----%p----%p",std1,std2,std3);
         
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);

@@ -49,5 +49,8 @@
 +(Student *) student:(NSString *)_name
                     :(int)_age
                     :(float)_height;
+//单例命名规范
++(instancetype) shareStudent;
++(instancetype) defaultStudent;
 @end
 
