@@ -658,6 +658,45 @@ int main(int argc, char * argv[]) {
         NSLog(@"读取文件中的NSDictionary===%@",fileDic);
         //删除所有
         [nmDic removeAllObjects];
+        //文件相关
+        NSFileManager *manage = [NSFileManager defaultManager];
+        //文件是否存在
+        res = [manage fileExistsAtPath:@"/Users/qinyue/writeToFile.txt"];
+        LogBOOL(res);
+        BOOL flag = NO;
+        //res代表是否存在 ，flag判断 文件还是文件夹 YES 文件夹 ， NO 文件
+        res = [manage fileExistsAtPath:@"/Users/qinyue/writeToFile.txt" isDirectory:&flag];
+        LogBOOL(res);
+        LogBOOL(flag);
+        //是否有读取权限
+        res = [manage isReadableFileAtPath:@"/Users/qinyue/writeToFile.txt"];
+        //是否有写权限
+        res = [manage isWritableFileAtPath:@"/Users/qinyue/writeToFile.txt"];
+        //是否可以删除
+        res = [manage isDeletableFileAtPath:@"/Users/qinyue/writeToFile.txt"];
+        //获取文件信息
+        NSDictionary *fileDesc = [manage attributesOfItemAtPath:@"/Users/qinyue/writeToFile.txt" error:&err];
+        NSLog(@"%@----%@",fileDesc,fileDesc[NSFileSize]);
+        //获取指定目录下的所有的目录及文件,包含子所有文件夹下
+        NSArray *fileArr = [manage subpathsAtPath:@"Users/qinyue/nacos"];
+        NSLog(@"%@",fileArr);
+        //获取指定目录下的所有的目录及文件
+        fileArr = [manage contentsOfDirectoryAtPath:@"Users/qinyue/nacos" error:&err];
+        NSLog(@"%@",fileArr);
+        //在指定的目录创建并写入文件
+        NSString *fileContents = @"上酒店司机及时降低建军打开v小客车你可能就安静的";
+        NSDate *fileDate = [fileContents dataUsingEncoding:NSUTF8StringEncoding];
+        //第一个是 文件路径；第二个是文件内容 如果创建空文件 传 nil；第三个是文件属性，默认为nil
+        res = [manage createFileAtPath:@"Users/qinyue/nacos/fileDate.txt" contents:fileDate attributes:nil];
+        //创建文件夹
+        //路径 ；YES作为路径创建，NO不会做一路径创建；指定属性，默认为nil
+        res = [manage createDirectoryAtPath:@"Users/qinyue/nacos/fileDate/aaa/bbb/cccc" withIntermediateDirectories:YES attributes:nil error:&err];
+        //拷贝
+        res = [manage copyItemAtPath:@"Users/qinyue/nacos/fileDate.txt" toPath:@"Users/qinyue/nacos/copyFileDate.txt" error:&err];
+        //移动
+        res = [manage moveItemAtPath:@"Users/qinyue/nacos/fileDate.txt" toPath:@"Users/qinyue/nacos/moveFileDate.txt" error:&err];
+        //删除
+        res = [manage removeItemAtPath:@"Users/qinyue/nacos/moveFileDate.txt" error:&err];
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
 }
