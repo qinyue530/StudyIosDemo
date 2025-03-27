@@ -697,6 +697,28 @@ int main(int argc, char * argv[]) {
         res = [manage moveItemAtPath:@"Users/qinyue/nacos/fileDate.txt" toPath:@"Users/qinyue/nacos/moveFileDate.txt" error:&err];
         //删除
         res = [manage removeItemAtPath:@"Users/qinyue/nacos/moveFileDate.txt" error:&err];
+        //结构体无法存储到集合中。可包装到对象后，在存到集合
+        //界面控件的坐标，与NSPoint一样
+        CGPoint cg = CGPointMake(22, 33);
+        NSLog(@"%@",NSStringFromCGPoint(cg));
+        //界面控件的大小 ，宽度和高度  与NSSize一样
+        CGSize size =CGSizeMake(11,22);
+        NSLog(@"%@",NSStringFromCGSize(size));
+        //界面控件的坐标 和 界面控件的大小
+        CGRect reset = CGRectMake(1, 2, 3, 4);
+        NSLog(@"%@",NSStringFromCGRect(reset));
+        
+        NSValue *v1 = [NSValue valueWithCGPoint:cg];
+        NSValue *v2 = [NSValue valueWithCGSize:size];
+        NSValue *v3 = [NSValue valueWithCGRect:reset];
+        [nsArr addObject:v1];
+        [nsArr addObject:v2];
+        [nsArr addObject:v3];
+        NSLog(@"%@",nsArr);
+        
+        //日期
+        
+        
     }
     //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
 }
