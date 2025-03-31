@@ -763,7 +763,7 @@ int main(int argc, char * argv[]) {
         NSLog(@"%p-----%p----%p",std1,std2,std3);
         
     }
-    //return UIApplicationMain(argc, arrgv, nil, appDelegateClassName);
+    return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }
 
 
