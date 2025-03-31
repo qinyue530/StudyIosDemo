@@ -2,7 +2,7 @@
 //  ViewController.m
 //  StudyIosDemo
 //
-//  Created by 秦跃 on 2025/2/12.
+//  Created by 秦跃 on 20210/2/12.
 //
 
 #import "ViewController.h"
@@ -70,29 +70,39 @@
 }
 
 - (IBAction)shangyi:(id)sender{
+    //通过动画的方式执行
+    //开启动画
+    [UIView beginAnimations:nil context:nil];
+    //设置动画执行时间
+    [UIView setAnimationDuration:1];
+    
     CGRect cgr1 = self.jisuanButton.frame;
-    cgr1.origin.y-=5;
+    cgr1.origin.y-=10;
     self.jisuanButton.frame = cgr1;
     NSLog(@"向上 tag值为:%ld",[sender tag]);
+    //提交动画
+    [UIView commitAnimations];
+    
+    
 }
 
 - (IBAction)xiayi:(id)sender {
     CGPoint cgp1 = self.jisuanButton.center;
-    cgp1.y+=5;
+    cgp1.y+=10;
     self.jisuanButton.center = cgp1;
     NSLog(@"向下 tag值为:%ld",[sender tag]);
 }
 
 - (IBAction)zuoyi:(id)sender {
     CGRect cgr1 = self.jisuanButton.frame;
-    cgr1.origin.x-=5;
+    cgr1.origin.x-=10;
     self.jisuanButton.frame = cgr1;
     NSLog(@"向左 tag值为:%ld",[sender tag]);
 }
 
 - (IBAction)youyi:(id)sender {
     CGRect cgr1 = self.jisuanButton.frame;
-    cgr1.origin.x+=5;
+    cgr1.origin.x+=10;
     self.jisuanButton.frame = cgr1;
     NSLog(@"向右 tag值为:%ld",[sender tag]);
 }
