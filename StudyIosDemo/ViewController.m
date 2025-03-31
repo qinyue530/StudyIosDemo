@@ -51,6 +51,7 @@
 }
 
 - (IBAction)suoxiao:(id)sender {
+    //掌握frame［包含位置和大小）、center（只能修改位置）、bounds［只能修改大小｝bransfprm[位置、大小、旋转都可以] 的使用
     //获取按钮坐标和大小
     CGRect cgr1 = self.jisuanButton.frame;
     cgr1.size.width*=0.9;
@@ -60,10 +61,11 @@
 }
 
 - (IBAction)fangda:(id)sender {
-    CGRect cgr1 = self.jisuanButton.frame;
+    //bounds有为位置信息单x,y始终是0，0 无法改变位置
+    CGRect cgr1 = self.jisuanButton.bounds;
     cgr1.size.width*=1.1;
     cgr1.size.height*=1.1;
-    self.jisuanButton.frame = cgr1;
+    self.jisuanButton.bounds = cgr1;
     NSLog(@"放大 tag值为:%ld",[sender tag]);
 }
 
@@ -75,9 +77,9 @@
 }
 
 - (IBAction)xiayi:(id)sender {
-    CGRect cgr1 = self.jisuanButton.frame;
-    cgr1.origin.y+=5;
-    self.jisuanButton.frame = cgr1;
+    CGPoint cgp1 = self.jisuanButton.center;
+    cgp1.y+=5;
+    self.jisuanButton.center = cgp1;
     NSLog(@"向下 tag值为:%ld",[sender tag]);
 }
 
