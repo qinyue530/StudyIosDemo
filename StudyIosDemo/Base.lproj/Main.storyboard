@@ -61,7 +61,7 @@
                                 <state key="normal" title="计算" backgroundImage="A"/>
                                 <state key="highlighted" title="hightd" backgroundImage="B"/>
                                 <connections>
-                                    <action selector="jisuan" destination="BYZ-38-t0r" eventType="touchUpInside" id="MGv-Dh-MRu"/>
+                                    <action selector="jisuan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O26-u5-tGU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="20" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6L-Mc-bxH">
@@ -118,15 +118,62 @@
                                     <action selector="shangyi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gp6-xu-9LK"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="41o-zU-49c">
+                                <rect key="frame" x="277" y="120" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsC-c0-0uh">
+                                <rect key="frame" x="24" y="409" width="59" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="平移"/>
+                                <connections>
+                                    <action selector="pingyi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="10A-v0-WZg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRo-Up-B6I">
+                                <rect key="frame" x="167" y="409" width="59" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="旋转"/>
+                                <connections>
+                                    <action selector="xuanzhuan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zPg-6T-jGb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTS-16-6Vg">
+                                <rect key="frame" x="307" y="409" width="59" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="缩放"/>
+                                <connections>
+                                    <action selector="suofang:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cOK-aL-jdd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUL-l9-CDd">
+                                <rect key="frame" x="167" y="452" width="59" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="复位"/>
+                                <connections>
+                                    <action selector="fuwei:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uKd-KV-O92"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                     </view>
                     <connections>
-                        <outlet property="jisuanButton" destination="WxT-U6-gLd" id="J08-Dz-dom"/>
+                        <outlet property="fuwei" destination="gUL-l9-CDd" id="DcZ-OP-sHr"/>
+                        <outlet property="jisuan" destination="WxT-U6-gLd" id="Fue-rN-bqZ"/>
                         <outlet property="lblResult" destination="J6g-FF-EsF" id="V9P-UJ-rFm"/>
                         <outlet property="number1" destination="ocY-Nx-CFr" id="ktU-Ss-ZWT"/>
                         <outlet property="number2" destination="kwS-h9-MCa" id="l0T-tS-cV8"/>
+                        <outlet property="password" destination="41o-zU-49c" id="NHy-Zr-OWA"/>
+                        <outlet property="pingyi" destination="RsC-c0-0uh" id="ZH3-sj-DMx"/>
+                        <outlet property="suofang" destination="vTS-16-6Vg" id="IAa-j0-rgv"/>
+                        <outlet property="xuanzhuan" destination="bRo-Up-B6I" id="zJ8-oQ-nA6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
