@@ -6,7 +6,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ViewController.h"
+#import <UIKit/UIKit.h>
 @interface AppDelegate ()
 
 @end
@@ -16,25 +17,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // 初始化窗口
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        
+    // 创建 UINavigationController，并设置根控制器为 FirstViewController
+    // 2. 从 Storyboard 加载初始控制器
+    ViewController *firstVC = [[ViewController alloc] init];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:firstVC];
+    // 设置窗口根控制器Main Interface
+    self.window.rootViewController = navController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
 
 #pragma mark - UISceneSession lifecycle
 
-
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
-    // Called when a new scene session is being created.
-    // Use this method to select a configuration to create the new scene with.
-    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
-}
-
-
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-}
 
 
 @end

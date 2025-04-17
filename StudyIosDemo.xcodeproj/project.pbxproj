@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		602F3BEF2D5C932F0040C01D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 602F3BEE2D5C932F0040C01D /* AppDelegate.m */; };
-		602F3BF22D5C932F0040C01D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 602F3BF12D5C932F0040C01D /* SceneDelegate.m */; };
 		602F3BF52D5C932F0040C01D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602F3BF42D5C932F0040C01D /* ViewController.m */; };
 		602F3BF82D5C932F0040C01D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BF72D5C932F0040C01D /* Base */; };
 		602F3BFA2D5C93300040C01D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BF92D5C93300040C01D /* Assets.xcassets */; };
 		602F3BFD2D5C93300040C01D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BFC2D5C93300040C01D /* Base */; };
 		602F3C002D5C93300040C01D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 602F3BFF2D5C93300040C01D /* main.m */; };
+		605285D32DAFA3830047C378 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BF62D5C932F0040C01D /* Main.storyboard */; };
 		6090E8D82D5DC73E00348316 /* NsPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090E8D72D5DC73E00348316 /* NsPerson.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6090E8DB2D5DCD5000348316 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090E8DA2D5DCD5000348316 /* Student.m */; };
+		609EDF442D9D1CF70029012A /* pic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609EDF432D9D1CF70029012A /* pic.plist */; };
+		609EDF462D9D382C0029012A /* study.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 609EDF452D9D382C0029012A /* study.rtf */; };
+		60BBAE6F2DAF4951008E3300 /* TomCatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BBAE6E2DAF4951008E3300 /* TomCatController.m */; };
 		60DC599A2D792A380037A90C /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DC59992D792A380037A90C /* Teacher.m */; };
 		60F914632D812AEE006FAE46 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F914622D812AEE006FAE46 /* Car.m */; };
 		60F914692D83BE61006FAE46 /* Student+StudentBag.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F914682D83BE61006FAE46 /* Student+StudentBag.m */; };
@@ -25,8 +28,6 @@
 		602F3BEA2D5C932F0040C01D /* StudyIosDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyIosDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		602F3BED2D5C932F0040C01D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		602F3BEE2D5C932F0040C01D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		602F3BF02D5C932F0040C01D /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		602F3BF12D5C932F0040C01D /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		602F3BF32D5C932F0040C01D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		602F3BF42D5C932F0040C01D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		602F3BF72D5C932F0040C01D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,6 +39,10 @@
 		6090E8D72D5DC73E00348316 /* NsPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NsPerson.m; sourceTree = "<group>"; };
 		6090E8D92D5DCD4600348316 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		6090E8DA2D5DCD5000348316 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		609EDF432D9D1CF70029012A /* pic.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = pic.plist; sourceTree = "<group>"; };
+		609EDF452D9D382C0029012A /* study.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = study.rtf; sourceTree = "<group>"; };
+		60BBAE6D2DAF4951008E3300 /* TomCatController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TomCatController.h; sourceTree = "<group>"; };
+		60BBAE6E2DAF4951008E3300 /* TomCatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TomCatController.m; sourceTree = "<group>"; };
 		60DC59982D792A380037A90C /* Teacher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
 		60DC59992D792A380037A90C /* Teacher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
 		60F914612D812AEE006FAE46 /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
@@ -81,9 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				602F3BED2D5C932F0040C01D /* AppDelegate.h */,
+				60BBAE6D2DAF4951008E3300 /* TomCatController.h */,
+				60BBAE6E2DAF4951008E3300 /* TomCatController.m */,
 				602F3BEE2D5C932F0040C01D /* AppDelegate.m */,
-				602F3BF02D5C932F0040C01D /* SceneDelegate.h */,
-				602F3BF12D5C932F0040C01D /* SceneDelegate.m */,
 				602F3BF32D5C932F0040C01D /* ViewController.h */,
 				602F3BF42D5C932F0040C01D /* ViewController.m */,
 				602F3BF62D5C932F0040C01D /* Main.storyboard */,
@@ -105,6 +110,8 @@
 				60F9146B2D8A6487006FAE46 /* Book.h */,
 				60F9146C2D8A68F2006FAE46 /* Pen.h */,
 				60F9146D2D91014F006FAE46 /* KeWen.h */,
+				609EDF432D9D1CF70029012A /* pic.plist */,
+				609EDF452D9D382C0029012A /* study.rtf */,
 			);
 			path = StudyIosDemo;
 			sourceTree = "<group>";
@@ -169,6 +176,9 @@
 				602F3BFA2D5C93300040C01D /* Assets.xcassets in Resources */,
 				602F3BFD2D5C93300040C01D /* Base in Resources */,
 				602F3BF82D5C932F0040C01D /* Base in Resources */,
+				605285D32DAFA3830047C378 /* Main.storyboard in Resources */,
+				609EDF442D9D1CF70029012A /* pic.plist in Resources */,
+				609EDF462D9D382C0029012A /* study.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +195,7 @@
 				6090E8D82D5DC73E00348316 /* NsPerson.m in Sources */,
 				602F3BEF2D5C932F0040C01D /* AppDelegate.m in Sources */,
 				602F3C002D5C93300040C01D /* main.m in Sources */,
-				602F3BF22D5C932F0040C01D /* SceneDelegate.m in Sources */,
+				60BBAE6F2DAF4951008E3300 /* TomCatController.m in Sources */,
 				60F914632D812AEE006FAE46 /* Car.m in Sources */,
 				6090E8DB2D5DCD5000348316 /* Student.m in Sources */,
 			);

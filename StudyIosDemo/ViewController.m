@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "TomCatController.h"
 //类扩展
 @interface ViewController ()
 - (IBAction)compute;
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *fuwei;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *jisuan;
+@property (weak, nonatomic) IBOutlet UIButton *qingping;
 //Text Field中
 //Secure Text Entry点上对勾，可以隐藏密码
 //Placeholder 输入框提示信息
@@ -33,14 +35,31 @@
 - (IBAction)xuanzhuan:(id)sender;
 - (IBAction)suofang:(id)sender;
 - (IBAction)fuwei:(id)sender;
+- (IBAction)qingping:(id)sender;
+
+@property (nonatomic,strong) NSArray *pic;
+@property (nonatomic,assign) int index;
 
 @end
 
 @implementation ViewController
+
+-(NSArray *)pic{
+    if(_pic == nil){
+        //获取Info.plist中数据
+        //获取手机安装软件的跟路径，在这个路径，搜索Info.plist文件的路径
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"pic.plist" ofType:nil];
+        NSArray *array = [NSArray arrayWithContentsOfFile:path];
+        _pic = array;
+    }
+    return _pic;
+}
+
 //当要显示一个界面的时候，首先创建这个界面对应的控制器控制器创建好以后，接着创建控制器所管理的那个view，当这个view加载完毕以后就开始执行下面的方法了。
 //所以只要viewDidLoad方法被执行了，就表示控制器所管理的view创建好了
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"首页";
     // Do any additional setup after loading the view.
     //动态创建一个按钮
     UIButton *btn = [[UIButton alloc] init];
@@ -64,8 +83,29 @@
     btn.frame = CGRectMake(370, 55, 55, 55);
     //按钮增加一个单击事件
     [btn addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+    //增加控件
     [self.view addSubview:btn];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"首页"; // 设置导航栏标题
+        
+    // 创建跳转按钮
+    UIButton *pushButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    pushButton.frame = CGRectMake(100, 200, 200, 50);
+    [pushButton setTitle:@"跳转到第二页" forState:UIControlStateNormal];
+    [pushButton addTarget:self action:@selector(pushToSecondPage) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:pushButton];
+}
+
+// 跳转按钮点击事件
+- (void)pushToSecondPage {
+    NSLog(@"导航控制器是否存在？%@", self.navigationController); // 调试输出
+//    if (self.navigationController) {
+        TomCatController *secondVC = [[TomCatController alloc] init];
+        [self.navigationController pushViewController:secondVC animated:YES];
+//    } else {
+//        NSLog(@"错误：self.navigationController 为 nil");
+//    }
 }
 //点击按钮时间
 - (IBAction)buttonClick {
@@ -74,6 +114,19 @@
 //点击按钮时间
 - (IBAction)compute {
     NSLog(@"------------");
+}
+//清屏
+- (IBAction)qingping:(id)sender {
+    //根据tag获取空间,类型强转
+    //UITextField *tagView = (UITextField *)[self.view viewWithTag:1000];
+    //tagView.textColor = [UIColor redColor];
+    //删除控件
+    //[tagView removeFromSuperview];
+    //[self.password removeFromSuperview];
+    //从父控件中移除
+    while(self.view.subviews.firstObject){
+        [self.view.subviews.firstObject removeFromSuperview];
+    }
 }
 //复位
 - (IBAction)fuwei:(id)sender {
@@ -120,6 +173,20 @@
     self.xuanzhuan.transform = CGAffineTransformMakeRotation(M_PI_4);
     //缩放
     self.suofang.transform = CGAffineTransformMakeScale(1.5, 1.5);
+    
+    //获取父类控件
+    UIView *supV = self.jisuan.superview;
+    supV.backgroundColor = [UIColor yellowColor];
+    NSLog(@"jisuan 父类控件 %@",supV);
+    //所有子类空间
+    NSArray *nsa = self.view.subviews;
+    for(UIView *subA in nsa){
+        subA.backgroundColor = [UIColor greenColor];
+        NSLog(@"view 子类控件 %@",supV);
+    }
+    //根据tag获取空间,类型强转
+    UITextField *tagView = (UITextField *)[self.view viewWithTag:1000];
+    tagView.textColor = [UIColor redColor];
 }
 
 - (IBAction)suoxiao:(id)sender {
@@ -130,6 +197,13 @@
     cgr1.size.height*=0.9;
     self.jisuan.frame = cgr1;
     NSLog(@"缩小 tag值为:%ld",[sender tag]);
+    self.index--;
+    if(self.index<0){
+        self.index = - self.index;
+    }
+    NSDictionary *nsd = self.pic[self.index%self.pic.count];
+    UIImage *imgNormal = [UIImage imageNamed:[nsd valueForKey:@"name"]];
+    [self.jisuan setBackgroundImage:imgNormal forState:UIControlStateNormal];
 }
 
 - (IBAction)fangda:(id)sender {
@@ -139,6 +213,10 @@
     cgr1.size.height*=1.1;
     self.jisuan.bounds = cgr1;
     NSLog(@"放大 tag值为:%ld",[sender tag]);
+    self.index++;
+    NSDictionary *nsd = self.pic[self.index%self.pic.count];
+    UIImage *imgNormal = [UIImage imageNamed:[nsd valueForKey:@"name"]];
+    [self.jisuan setBackgroundImage:imgNormal forState:UIControlStateNormal];
 }
 
 - (IBAction)shangyi:(id)sender{
@@ -180,5 +258,9 @@
     cgr1.origin.x+=10;
     self.jisuan.frame = cgr1;
     NSLog(@"向右 tag值为:%ld",[sender tag]);
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 @end

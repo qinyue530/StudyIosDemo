@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,6 +12,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="380-nn-YCy"/>
+                        <viewControllerLayoutGuide type="bottom" id="De3-Al-WaN"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +121,7 @@
                                     <action selector="shangyi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gp6-xu-9LK"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="41o-zU-49c">
+                            <textField opaque="NO" tag="1000" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="41o-zU-49c">
                                 <rect key="frame" x="277" y="120" width="97" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -160,8 +163,17 @@
                                     <action selector="fuwei:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uKd-KV-O92"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56n-Tq-b1I">
+                                <rect key="frame" x="167" y="495" width="59" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="清屏"/>
+                                <connections>
+                                    <action selector="fuwei:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hQu-m0-Ihb"/>
+                                    <action selector="qingping:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w2L-sP-iaO"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                     </view>
                     <connections>
@@ -172,6 +184,7 @@
                         <outlet property="number2" destination="kwS-h9-MCa" id="l0T-tS-cV8"/>
                         <outlet property="password" destination="41o-zU-49c" id="NHy-Zr-OWA"/>
                         <outlet property="pingyi" destination="RsC-c0-0uh" id="ZH3-sj-DMx"/>
+                        <outlet property="qingping" destination="56n-Tq-b1I" id="5uW-mq-hTk"/>
                         <outlet property="suofang" destination="vTS-16-6Vg" id="IAa-j0-rgv"/>
                         <outlet property="xuanzhuan" destination="bRo-Up-B6I" id="zJ8-oQ-nA6"/>
                     </connections>
