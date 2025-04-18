@@ -10,10 +10,10 @@
 		602F3BEF2D5C932F0040C01D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 602F3BEE2D5C932F0040C01D /* AppDelegate.m */; };
 		602F3BF52D5C932F0040C01D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602F3BF42D5C932F0040C01D /* ViewController.m */; };
 		602F3BF82D5C932F0040C01D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BF72D5C932F0040C01D /* Base */; };
-		602F3BFA2D5C93300040C01D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BF92D5C93300040C01D /* Assets.xcassets */; };
 		602F3BFD2D5C93300040C01D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BFC2D5C93300040C01D /* Base */; };
 		602F3C002D5C93300040C01D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 602F3BFF2D5C93300040C01D /* main.m */; };
 		605285D32DAFA3830047C378 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BF62D5C932F0040C01D /* Main.storyboard */; };
+		605285D52DB23E230047C378 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BF92D5C93300040C01D /* Assets.xcassets */; };
 		6090E8D82D5DC73E00348316 /* NsPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090E8D72D5DC73E00348316 /* NsPerson.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6090E8DB2D5DCD5000348316 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090E8DA2D5DCD5000348316 /* Student.m */; };
 		609EDF442D9D1CF70029012A /* pic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609EDF432D9D1CF70029012A /* pic.plist */; };
@@ -173,11 +173,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				602F3BFA2D5C93300040C01D /* Assets.xcassets in Resources */,
 				602F3BFD2D5C93300040C01D /* Base in Resources */,
 				602F3BF82D5C932F0040C01D /* Base in Resources */,
 				605285D32DAFA3830047C378 /* Main.storyboard in Resources */,
 				609EDF442D9D1CF70029012A /* pic.plist in Resources */,
+				605285D52DB23E230047C378 /* Assets.xcassets in Resources */,
 				609EDF462D9D382C0029012A /* study.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,8 +350,9 @@
 				DEVELOPMENT_TEAM = 3RX3P47A54;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StudyIosDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "啊啊啊";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -379,8 +380,9 @@
 				DEVELOPMENT_TEAM = 3RX3P47A54;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StudyIosDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "啊啊啊";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
