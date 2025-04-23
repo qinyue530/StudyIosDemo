@@ -350,7 +350,7 @@
 				DEVELOPMENT_TEAM = 3RX3P47A54;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StudyIosDemo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "啊啊啊";
+				INFOPLIST_KEY_CFBundleDisplayName = "秦跃Demo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -380,7 +380,7 @@
 				DEVELOPMENT_TEAM = 3RX3P47A54;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StudyIosDemo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "啊啊啊";
+				INFOPLIST_KEY_CFBundleDisplayName = "秦跃Demo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
