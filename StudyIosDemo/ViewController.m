@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "TomCatController.h"
+#import "XibViewController.h"
 //类扩展
 @interface ViewController ()
 - (IBAction)compute;
@@ -55,6 +56,11 @@
     return _pic;
 }
 
+- (void) timerAction{
+    static NSInteger i = 0;
+    NSLog(@"i = %ld",i++);
+}
+
 //当要显示一个界面的时候，首先创建这个界面对应的控制器控制器创建好以后，接着创建控制器所管理的那个view，当这个view加载完毕以后就开始执行下面的方法了。
 //所以只要viewDidLoad方法被执行了，就表示控制器所管理的view创建好了
 - (void)viewDidLoad {
@@ -80,7 +86,7 @@
     //点击状态 按钮背景图
     [btn setBackgroundImage:imgHighlighted forState:UIControlStateHighlighted];
     //设置坐标和大小
-    btn.frame = CGRectMake(370, 55, 55, 55);
+    btn.frame = CGRectMake(0, 55, 55, 55);
     //按钮增加一个单击事件
     [btn addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
     //增加控件
@@ -91,18 +97,45 @@
         
     // 创建跳转按钮
     UIButton *pushButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    pushButton.frame = CGRectMake(100, 200, 200, 50);
+    pushButton.frame = CGRectMake(0, 300, 200, 50);
     [pushButton setTitle:@"跳转到第二页" forState:UIControlStateNormal];
     [pushButton addTarget:self action:@selector(pushToSecondPage) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:pushButton];
+    
+
+    UIView* redView = [[UIView alloc] initWithFrame:CGRectMake(60, 60, 250, 250)];
+    redView.tag = 10;
+    [redView setBackgroundColor:[UIColor redColor]];
+    [self.view addSubview:redView];
+    
+    UIView* yellowView = [[UIView alloc] initWithFrame:CGRectMake(70, 70, 250, 250)];
+    yellowView.tag = 12;
+    [yellowView setBackgroundColor:[UIColor yellowColor]];
+    [self.view addSubview:yellowView];
+    
+    UIView* greenView = [[UIView alloc] initWithFrame:CGRectMake(80, 80, 250, 250)];
+    greenView.tag = 13;
+    [greenView setBackgroundColor:[UIColor greenColor]];
+    [self.view addSubview:greenView];
+    
+    //把一个视图移到最前方
+    //[self.view bringSubviewToFront:redView];
+    //把一个视图移到最后方
+    //[self.view sendSubviewToBack:yellowView];
+    //交换两个视图
+    NSInteger redIndex = [self.view.subviews indexOfObject:redView];
+    NSInteger yellowIndex = [self.view.subviews indexOfObject:yellowView];
+    NSInteger greenIndex = [self.view.subviews indexOfObject:greenView];
+    //只是交换上下层，不是交换实际的位置
+    [self.view exchangeSubviewAtIndex:redIndex withSubviewAtIndex:greenIndex];
 }
 
 // 跳转按钮点击事件
 - (void)pushToSecondPage {
     NSLog(@"导航控制器是否存在？%@", self.navigationController); // 调试输出
 //    if (self.navigationController) {
-        TomCatController *secondVC = [[TomCatController alloc] init];
-        [self.navigationController pushViewController:secondVC animated:YES];
+        XibViewController *xibView = [[XibViewController alloc] init];
+        [self.navigationController pushViewController:xibView animated:YES];
 //    } else {
 //        NSLog(@"错误：self.navigationController 为 nil");
 //    }
