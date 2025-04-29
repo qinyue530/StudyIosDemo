@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *jisuan;
 @property (weak, nonatomic) IBOutlet UIButton *qingping;
-//使用weak可以展示，使用weak 无法展示？？？原因未知
+//使用strong可以展示，使用weak 无法展示（没有强引用，会立即失效）
 @property (nonatomic, strong) UILabel *timeLable;
 @property (weak, nonatomic) NSTimer *timer;
 //Text Field中
