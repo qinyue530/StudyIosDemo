@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *jisuan;
 @property (weak, nonatomic) IBOutlet UIButton *qingping;
+//使用weak可以展示，使用weak 无法展示？？？原因未知
+@property (nonatomic, strong) UILabel *timeLable;
+@property (weak, nonatomic) NSTimer *timer;
 //Text Field中
 //Secure Text Entry点上对勾，可以隐藏密码
 //Placeholder 输入框提示信息
@@ -59,6 +62,17 @@
 - (void) timerAction{
     static NSInteger i = 0;
     NSLog(@"i = %ld",i++);
+    if(i == 30){
+        //停止
+        [self.timer setFireDate:[NSDate distantFuture]];
+    }else{
+        //开启
+        [self.timer setFireDate:[NSDate distantPast]];
+    }
+    sleep(1);
+    [self.timeLable setText:[NSString stringWithFormat:@"计时器 - %ld",i]];
+    [self.timeLable setTextColor:[UIColor blackColor]];
+    [self.view addSubview:self.timeLable];
 }
 
 //当要显示一个界面的时候，首先创建这个界面对应的控制器控制器创建好以后，接着创建控制器所管理的那个view，当这个view加载完毕以后就开始执行下面的方法了。
@@ -126,8 +140,16 @@
     NSInteger redIndex = [self.view.subviews indexOfObject:redView];
     NSInteger yellowIndex = [self.view.subviews indexOfObject:yellowView];
     NSInteger greenIndex = [self.view.subviews indexOfObject:greenView];
+    
     //只是交换上下层，不是交换实际的位置
     [self.view exchangeSubviewAtIndex:redIndex withSubviewAtIndex:greenIndex];
+    //
+    _timeLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 300, 200, 50)];
+    [_timeLable setBackgroundColor:[UIColor systemPinkColor]];
+    _timeLable.text = @"==================";
+    [self.view addSubview:_timeLable];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+    
 }
 
 // 跳转按钮点击事件
