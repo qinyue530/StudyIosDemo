@@ -251,6 +251,7 @@
 }
 
 - (IBAction)suoxiao:(id)sender {
+    //frame的坐标位置 相对于父视图，bounds有坐标但是针对自身的，永远是0，0
     //掌握frame［包含位置和大小）、center（只能修改位置）、bounds［只能修改大小｝bransfprm[位置、大小、旋转都可以] 的使用
     //获取按钮坐标和大小
     CGRect cgr1 = self.jisuan.frame;
