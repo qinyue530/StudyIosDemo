@@ -8,6 +8,18 @@
 #import "JsYdViewController.h"
 
 @interface JsYdViewController ()
+
+@property (nonatomic, strong)  UILabel *jia;
+@property (nonatomic, strong)  UILabel *deng;
+@property (nonatomic, strong)  UILabel *jieguo;
+
+@property (nonatomic, strong)  UIButton *shang;
+@property (nonatomic, strong)  UIButton *xia;
+@property (nonatomic, strong)  UIButton *zuo;
+@property (nonatomic, strong)  UIButton *you;
+@property (nonatomic, strong)  UIButton *fangda;
+@property (nonatomic, strong)  UIButton *suoxiao;
+
 @property (nonatomic, strong)  UITextField *number1;
 @property (nonatomic, strong)  UITextField *number2;
 @property (nonatomic, strong)  UILabel *lblResult;
@@ -44,7 +56,87 @@
     [self.view addSubview:self.password];
     [self.view addSubview:self.jisuan];
     [self.view addSubview:self.qingping];
+    
+    [self.view addSubview:self.jia];
+    [self.view addSubview:self.deng];
+    [self.view addSubview:self.shang];
+    [self.view addSubview:self.xia];
+    [self.view addSubview:self.zuo];
+    [self.view addSubview:self.you];
+    [self.view addSubview:self.fangda];
+    [self.view addSubview:self.suoxiao];
+    [self.view addSubview:self.jieguo];
 }
+- (UILabel *)jia {
+    if(!_jia){
+        _jia = [[UITextField alloc]initWithFrame:CGRectMake(113, 76, 11, 21)];
+        _jia.text = @"+";
+    }
+    return _jia;
+}
+- (UILabel *)deng {
+    if(!_deng){
+        _deng = [[UITextField alloc]initWithFrame:CGRectMake(237, 76, 11, 21)];
+        _deng.text = @"=";
+    }
+    return _deng;
+}
+- (UILabel *)jieguo {
+    if(!_jieguo){
+        _jieguo = [[UITextField alloc]initWithFrame:CGRectMake(277, 76, 100, 21)];
+        _jieguo.text = @"0";
+    }
+    return _jieguo;
+}
+- (UIButton *)shang {
+    if(!_shang){
+        _shang = [[UIButton alloc]initWithFrame:CGRectMake(70, 507, 35, 35)];
+        [_shang setTitle:@"^" forState:UIControlStateNormal];
+        [_shang setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
+    }
+    return _shang;
+}
+- (UIButton *)xia  {
+    if(!_xia){
+        _xia = [[UIButton alloc]initWithFrame:CGRectMake(71, 565, 35, 35)];
+        [_xia setTitle:@"v" forState:UIControlStateNormal];
+        [_xia setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
+    }
+    return _xia;
+}
+- (UIButton *)zuo {
+    if(!_zuo){
+        _zuo = [[UIButton alloc]initWithFrame:CGRectMake(35, 535, 35, 35)];
+        [_zuo setTitle:@"<" forState:UIControlStateNormal];
+        [_zuo setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
+    }
+    return _zuo;
+}
+- (UIButton *)you {
+    if(!_you){
+        _you = [[UIButton alloc]initWithFrame:CGRectMake(101, 535, 35, 35)];
+        [_you setTitle:@">" forState:UIControlStateNormal];
+        [_you setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
+    }
+    return _you;
+}
+- (UIButton *)fangda {
+    if(!_fangda){
+        _fangda = [[UIButton alloc]initWithFrame:CGRectMake(238, 535, 35, 35)];
+        [_fangda setTitle:@"+" forState:UIControlStateNormal];
+        [_fangda setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
+    }
+    return _fangda;
+}
+- (UIButton *)suoxiao {
+    if(!_suoxiao){
+        _suoxiao = [[UIButton alloc]initWithFrame:CGRectMake(311, 535, 35, 35)];
+        [_suoxiao setTitle:@"-" forState:UIControlStateNormal];
+        [_suoxiao setTitleColor:[UIColor blackColor]forState:UIControlStateNormal];
+    }
+    return _suoxiao;
+}
+
 - (UITextField *)number1 {
     if(!_number1){
         _number1 = [[UITextField alloc]initWithFrame:CGRectMake(16, 70, 73, 34)];
