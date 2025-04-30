@@ -16,6 +16,7 @@
 		605285D52DB23E230047C378 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 602F3BF92D5C93300040C01D /* Assets.xcassets */; };
 		605310112DC0BC8300D5529C /* XibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6053100F2DC0BC8300D5529C /* XibViewController.m */; };
 		605310122DC0BC8300D5529C /* XibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 605310102DC0BC8300D5529C /* XibViewController.xib */; };
+		605310162DC20C5400D5529C /* JsYdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605310152DC20C5400D5529C /* JsYdViewController.m */; };
 		6090E8D82D5DC73E00348316 /* NsPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090E8D72D5DC73E00348316 /* NsPerson.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6090E8DB2D5DCD5000348316 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090E8DA2D5DCD5000348316 /* Student.m */; };
 		609EDF442D9D1CF70029012A /* pic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609EDF432D9D1CF70029012A /* pic.plist */; };
@@ -40,6 +41,8 @@
 		6053100E2DC0BC8300D5529C /* XibViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XibViewController.h; sourceTree = "<group>"; };
 		6053100F2DC0BC8300D5529C /* XibViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XibViewController.m; sourceTree = "<group>"; };
 		605310102DC0BC8300D5529C /* XibViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XibViewController.xib; sourceTree = "<group>"; };
+		605310142DC20C5400D5529C /* JsYdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JsYdViewController.h; sourceTree = "<group>"; };
+		605310152DC20C5400D5529C /* JsYdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsYdViewController.m; sourceTree = "<group>"; };
 		6090E8D62D5DC71D00348316 /* NsPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NsPerson.h; sourceTree = "<group>"; };
 		6090E8D72D5DC73E00348316 /* NsPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NsPerson.m; sourceTree = "<group>"; };
 		6090E8D92D5DCD4600348316 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				6053100E2DC0BC8300D5529C /* XibViewController.h */,
 				6053100F2DC0BC8300D5529C /* XibViewController.m */,
 				605310102DC0BC8300D5529C /* XibViewController.xib */,
+				605310142DC20C5400D5529C /* JsYdViewController.h */,
+				605310152DC20C5400D5529C /* JsYdViewController.m */,
 			);
 			path = StudyIosDemo;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 				60DC599A2D792A380037A90C /* Teacher.m in Sources */,
 				6090E8D82D5DC73E00348316 /* NsPerson.m in Sources */,
 				602F3BEF2D5C932F0040C01D /* AppDelegate.m in Sources */,
+				605310162DC20C5400D5529C /* JsYdViewController.m in Sources */,
 				602F3C002D5C93300040C01D /* main.m in Sources */,
 				60BBAE6F2DAF4951008E3300 /* TomCatController.m in Sources */,
 				60F914632D812AEE006FAE46 /* Car.m in Sources */,
