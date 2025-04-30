@@ -8,6 +8,11 @@
 #import "ViewController.h"
 #import "TomCatController.h"
 #import "XibViewController.h"
+//获取屏幕高度
+#define SCREENWIDTH [[UIScreen mainScreen] bounds].size.width
+//获取屏幕宽度
+#define SCREENHEIGHT [[UIScreen mainScreen] bounds].size.height
+
 //类扩展
 @interface ViewController ()
 - (IBAction)compute;
@@ -150,6 +155,7 @@
     [self.view addSubview:_timeLable];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
     
+    NSLog(@"屏幕高度 - %f  , 屏幕宽度 - %f",SCREENHEIGHT,SCREENWIDTH);
 }
 
 // 跳转按钮点击事件
